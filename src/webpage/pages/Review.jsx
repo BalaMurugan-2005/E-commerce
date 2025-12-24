@@ -4,6 +4,7 @@ import { Star, Camera, X, Check, ArrowLeft } from 'lucide-react'
 import RatingStars from '../components/product/RatingStars'
 import Loader from '../components/common/Loader'
 import productsData from '../data/products.json'
+import '../styles/Review.css'
 
 const Review = () => {
   const { productId } = useParams()
@@ -71,32 +72,34 @@ const Review = () => {
   if (!product) return <div className="error">Product not found</div>
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-3xl">
+    <div className="review-page">
       <button
         onClick={() => navigate(`/product/${productId}`)}
-        className="flex items-center text-gray-600 hover:text-gray-900 mb-6"
+        className="back-button"
       >
-        <ArrowLeft size={20} className="mr-2" />
+        <ArrowLeft size={20} className="back-icon" />
         Back to Product
       </button>
 
-      <div className="bg-white rounded-lg shadow-md p-8">
-        <h1 className="text-2xl font-bold mb-2">Write a Review</h1>
-        <p className="text-gray-600 mb-8">Share your experience with this product</p>
+      <div className="review-container">
+        <div className="review-header">
+          <h1 className="review-title">Write a Review</h1>
+          <p className="review-subtitle">Share your experience with this product</p>
+        </div>
 
         {/* Product Info */}
-        <div className="flex items-center mb-8 p-4 bg-gray-50 rounded-lg">
+        <div className="product-info">
           <img
             src={product.image}
             alt={product.name}
-            className="w-20 h-20 object-cover rounded mr-4"
+            className="product-image"
           />
-          <div>
-            <h2 className="font-semibold">{product.name}</h2>
-            <p className="text-gray-600 text-sm">{product.category}</p>
-            <div className="flex items-center mt-1">
+          <div className="product-details">
+            <h2 className="product-name">{product.name}</h2>
+            <p className="product-category">{product.category}</p>
+            <div className="product-rating">
               <RatingStars rating={product.rating} size={16} />
-              <span className="text-sm text-gray-600 ml-2">
+              <span className="review-count">
                 ({product.reviewCount} reviews)
               </span>
             </div>
@@ -105,31 +108,27 @@ const Review = () => {
 
         <form onSubmit={handleSubmit}>
           {/* Rating */}
-          <div className="mb-8">
-            <label className="block text-lg font-medium mb-4">
+          <div className="rating-section">
+            <label className="rating-label">
               How would you rate this product?
             </label>
-            <div className="flex items-center space-x-2">
+            <div className="rating-stars">
               {[1, 2, 3, 4, 5].map(star => (
                 <button
                   key={star}
                   type="button"
                   onClick={() => setRating(star)}
-                  className="focus:outline-none"
+                  className="star-button"
                 >
                   <Star
                     size={40}
-                    className={`${
-                      star <= rating
-                        ? 'fill-yellow-400 text-yellow-400'
-                        : 'text-gray-300'
-                    } hover:scale-110 transition-transform`}
+                    className={star <= rating ? 'selected-star' : 'unselected-star'}
                   />
                 </button>
               ))}
-              <span className="ml-4 text-2xl font-bold">{rating}.0</span>
+              <span className="rating-value">{rating}.0</span>
             </div>
-            <div className="mt-2 text-sm text-gray-600">
+            <div className="rating-description">
               {rating === 5 && 'Excellent! Perfect product'}
               {rating === 4 && 'Good. Very satisfied'}
               {rating === 3 && 'Average. Met expectations'}
@@ -139,28 +138,28 @@ const Review = () => {
           </div>
 
           {/* Review Title */}
-          <div className="mb-6">
-            <label className="block font-medium mb-2">
+          <div className="form-section">
+            <label className="form-label">
               Review Title
-              <span className="text-gray-500 text-sm ml-1">(optional)</span>
+              <span className="optional-label">(optional)</span>
             </label>
             <input
               type="text"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               placeholder="Summarize your experience in a few words"
-              className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="text-input"
               maxLength="100"
             />
-            <div className="text-right text-sm text-gray-500 mt-1">
+            <div className="character-count">
               {title.length}/100 characters
             </div>
           </div>
 
           {/* Review Text */}
-          <div className="mb-6">
-            <label className="block font-medium mb-2">
-              Your Review *
+          <div className="form-section">
+            <label className="form-label">
+              Your Review <span className="required-label">*</span>
             </label>
             <textarea
               value={review}
@@ -168,65 +167,65 @@ const Review = () => {
               placeholder="What did you like or dislike? What did you use this product for?"
               rows="6"
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="textarea"
             />
-            <div className="text-right text-sm text-gray-500 mt-1">
+            <div className="character-count">
               {review.length}/2000 characters
             </div>
           </div>
 
           {/* Photo Upload */}
-          <div className="mb-8">
-            <label className="block font-medium mb-4">
+          <div className="photo-section">
+            <label className="photo-label">
               Add Photos
-              <span className="text-gray-500 text-sm ml-1">(optional)</span>
+              <span className="optional-label">(optional)</span>
             </label>
             
             {/* Upload Button */}
-            <label className="inline-block cursor-pointer">
+            <label className="upload-container">
               <input
                 type="file"
                 multiple
                 accept="image/*"
                 onChange={handleImageUpload}
-                className="hidden"
+                className="upload-input"
                 disabled={uploading}
               />
-              <div className="flex items-center justify-center w-40 h-40 border-2 border-dashed border-gray-300 rounded-lg hover:border-blue-500 hover:bg-blue-50">
+              <div className="upload-area" aria-disabled={uploading}>
                 {uploading ? (
-                  <div className="text-center">
-                    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto"></div>
-                    <span className="text-sm text-gray-600 mt-2">Uploading...</span>
+                  <div>
+                    <div className="uploading-spinner"></div>
+                    <span className="uploading-text">Uploading...</span>
                   </div>
                 ) : (
-                  <div className="text-center">
-                    <Camera size={32} className="text-gray-400 mx-auto mb-2" />
-                    <span className="text-sm text-gray-600">Add Photos</span>
-                  </div>
+                  <>
+                    <Camera size={32} className="upload-icon" />
+                    <span className="upload-text">Add Photos</span>
+                  </>
                 )}
               </div>
             </label>
 
             {/* Image Previews */}
             {images.length > 0 && (
-              <div className="mt-4">
-                <p className="text-sm text-gray-600 mb-2">
+              <div className="image-previews">
+                <p className="images-count">
                   {images.length} photo{images.length !== 1 ? 's' : ''} added
                 </p>
-                <div className="flex flex-wrap gap-4">
+                <div className="images-grid">
                   {images.map(image => (
-                    <div key={image.id} className="relative">
+                    <div key={image.id} className="image-preview">
                       <img
                         src={image.url}
                         alt="Review"
-                        className="w-32 h-32 object-cover rounded-lg"
+                        className="preview-image"
                       />
                       <button
                         type="button"
                         onClick={() => removeImage(image.id)}
-                        className="absolute -top-2 -right-2 w-6 h-6 bg-red-500 text-white rounded-full flex items-center justify-center hover:bg-red-600"
+                        className="remove-button"
                       >
-                        <X size={14} />
+                        <X size={14} className="remove-icon" />
                       </button>
                     </div>
                   ))}
@@ -236,35 +235,35 @@ const Review = () => {
           </div>
 
           {/* Tips */}
-          <div className="mb-8 p-4 bg-blue-50 rounded-lg">
-            <h3 className="font-medium mb-2">Writing a Great Review</h3>
-            <ul className="text-sm text-gray-600 space-y-1">
-              <li className="flex items-center">
-                <Check size={16} className="text-green-600 mr-2" />
+          <div className="tips-section">
+            <h3 className="tips-title">Writing a Great Review</h3>
+            <ul className="tips-list">
+              <li className="tip-item">
+                <Check size={16} className="tip-icon" />
                 Be specific about what you liked or disliked
               </li>
-              <li className="flex items-center">
-                <Check size={16} className="text-green-600 mr-2" />
+              <li className="tip-item">
+                <Check size={16} className="tip-icon" />
                 Mention the quality, features, and performance
               </li>
-              <li className="flex items-center">
-                <Check size={16} className="text-green-600 mr-2" />
+              <li className="tip-item">
+                <Check size={16} className="tip-icon" />
                 Include details about how you use the product
               </li>
-              <li className="flex items-center">
-                <Check size={16} className="text-green-600 mr-2" />
+              <li className="tip-item">
+                <Check size={16} className="tip-icon" />
                 Photos help other shoppers make decisions
               </li>
             </ul>
           </div>
 
           {/* Submit Button */}
-          <div className="flex justify-end">
+          <div className="submit-section">
             <button
               type="submit"
-              className="px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 flex items-center"
+              className="submit-button"
             >
-              <Check size={20} className="mr-2" />
+              <Check size={20} className="submit-icon" />
               Submit Review
             </button>
           </div>
@@ -272,14 +271,14 @@ const Review = () => {
       </div>
 
       {/* Community Guidelines */}
-      <div className="mt-8 bg-gray-50 rounded-lg p-6">
-        <h3 className="font-semibold mb-3">Community Guidelines</h3>
-        <ul className="text-sm text-gray-600 space-y-2">
-          <li>• Be honest and objective in your review</li>
-          <li>• Focus on the product and your experience with it</li>
-          <li>• Don't include personal information</li>
-          <li>• Don't use inappropriate language</li>
-          <li>• Reviews may be edited or removed if they violate our policies</li>
+      <div className="guidelines-section">
+        <h3 className="guidelines-title">Community Guidelines</h3>
+        <ul className="guidelines-list">
+          <li className="guideline-item">• Be honest and objective in your review</li>
+          <li className="guideline-item">• Focus on the product and your experience with it</li>
+          <li className="guideline-item">• Don't include personal information</li>
+          <li className="guideline-item">• Don't use inappropriate language</li>
+          <li className="guideline-item">• Reviews may be edited or removed if they violate our policies</li>
         </ul>
       </div>
     </div>

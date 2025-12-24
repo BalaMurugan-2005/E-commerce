@@ -7,6 +7,7 @@ import OrderReview from '../components/checkout/OrderReview'
 import Loader from '../components/common/Loader'
 import addressesData from '../data/addresses.json'
 import cartData from '../data/cart.json'
+import '../styles/Checkout.css'
 
 const Checkout = () => {
   const navigate = useNavigate()
@@ -52,25 +53,25 @@ const Checkout = () => {
 
   if (orderPlaced) {
     return (
-      <div className="container mx-auto px-4 py-16 text-center">
-        <div className="max-w-md mx-auto">
-          <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <Lock size={40} className="text-green-600" />
+      <div className="order-success">
+        <div className="success-container">
+          <div className="success-icon">
+            <Lock size={40} />
           </div>
-          <h1 className="text-3xl font-bold mb-4">Order Placed Successfully!</h1>
-          <p className="text-gray-600 mb-8">
+          <h1 className="success-title">Order Placed Successfully!</h1>
+          <p className="success-message">
             Thank you for your order. You will receive a confirmation email shortly.
           </p>
-          <div className="flex justify-center space-x-4">
+          <div className="success-buttons">
             <button
               onClick={() => navigate('/orders')}
-              className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700"
+              className="success-button-primary"
             >
               View Orders
             </button>
             <button
               onClick={() => navigate('/')}
-              className="border border-gray-300 px-6 py-3 rounded-lg hover:bg-gray-50"
+              className="success-button-secondary"
             >
               Continue Shopping
             </button>
@@ -81,35 +82,35 @@ const Checkout = () => {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="checkout-page">
       {/* Checkout Steps */}
-      <div className="mb-8">
-        <div className="flex items-center justify-center mb-4">
+      <div className="checkout-steps">
+        <div className="steps-container">
           {['Shipping', 'Payment', 'Review'].map((stepName, index) => (
             <React.Fragment key={stepName}>
-              <div className="flex items-center">
+              <div className="step-item">
                 <div
-                  className={`w-8 h-8 rounded-full flex items-center justify-center ${
+                  className={`step-circle ${
                     step > index + 1
-                      ? 'bg-green-500 text-white'
+                      ? 'completed'
                       : step === index + 1
-                      ? 'bg-blue-600 text-white'
-                      : 'bg-gray-200 text-gray-600'
+                      ? 'active'
+                      : 'inactive'
                   }`}
                 >
                   {step > index + 1 ? '✓' : index + 1}
                 </div>
                 <span
-                  className={`ml-2 ${
-                    step >= index + 1 ? 'font-medium' : 'text-gray-500'
+                  className={`step-label ${
+                    step >= index + 1 ? 'active' : 'inactive'
                   }`}
                 >
                   {stepName}
                 </span>
               </div>
               {index < 2 && (
-                <div className={`h-1 w-16 mx-4 ${
-                  step > index + 1 ? 'bg-green-500' : 'bg-gray-200'
+                <div className={`step-connector ${
+                  step > index + 1 ? 'completed' : 'incomplete'
                 }`} />
               )}
             </React.Fragment>
@@ -117,9 +118,9 @@ const Checkout = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="checkout-layout">
         {/* Checkout Form */}
-        <div className="lg:col-span-2">
+        <div className="checkout-form">
           {step === 1 && (
             <AddressSelect
               addresses={addresses}
@@ -148,13 +149,13 @@ const Checkout = () => {
           )}
 
           {/* Navigation Buttons */}
-          <div className="flex justify-between mt-8">
+          <div className="navigation-buttons">
             {step > 1 ? (
               <button
                 onClick={() => setStep(step - 1)}
-                className="flex items-center text-gray-600 hover:text-gray-900"
+                className="back-button"
               >
-                <ArrowLeft size={20} className="mr-2" />
+                <ArrowLeft size={20} className="back-icon" />
                 Back
               </button>
             ) : (
@@ -164,7 +165,7 @@ const Checkout = () => {
             {step < 3 ? (
               <button
                 onClick={() => setStep(step + 1)}
-                className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700"
+                className="continue-button"
                 disabled={step === 1 && !selectedAddress}
               >
                 Continue to {step === 1 ? 'Payment' : 'Review'}
@@ -172,9 +173,9 @@ const Checkout = () => {
             ) : (
               <button
                 onClick={handlePlaceOrder}
-                className="bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700 flex items-center"
+                className="place-order-button"
               >
-                <Lock size={20} className="mr-2" />
+                <Lock size={20} className="place-order-icon" />
                 Place Order
               </button>
             )}
@@ -182,82 +183,80 @@ const Checkout = () => {
         </div>
 
         {/* Order Summary */}
-        <div>
-          <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 sticky top-8">
-            <h3 className="text-lg font-semibold mb-4">Order Summary</h3>
-            
-            <div className="space-y-3 mb-6">
-              <div className="flex justify-between">
-                <span className="text-gray-600">Subtotal</span>
-                <span className="font-medium">${subtotal.toFixed(2)}</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-gray-600">Shipping</span>
-                <span className="font-medium">
-                  {shipping === 0 ? 'FREE' : `$${shipping.toFixed(2)}`}
-                </span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-gray-600">Tax</span>
-                <span className="font-medium">${tax.toFixed(2)}</span>
-              </div>
-              <div className="border-t pt-3">
-                <div className="flex justify-between text-lg font-semibold">
-                  <span>Total</span>
-                  <span>${total.toFixed(2)}</span>
-                </div>
-              </div>
+        <div className="order-summary-sidebar">
+          <h3 className="order-summary-title">Order Summary</h3>
+          
+          <div className="order-summary-details">
+            <div className="order-summary-row">
+              <span className="order-summary-label">Subtotal</span>
+              <span className="order-summary-value">${subtotal.toFixed(2)}</span>
             </div>
-
-            {/* Order Items */}
-            <div className="border-t pt-4">
-              <h4 className="font-medium mb-3">Items ({cartData.items.length})</h4>
-              <div className="space-y-3 max-h-64 overflow-y-auto">
-                {cartData.items.map(item => (
-                  <div key={item.id} className="flex items-center">
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      className="w-12 h-12 object-cover rounded mr-3"
-                    />
-                    <div className="flex-1">
-                      <p className="text-sm font-medium line-clamp-1">{item.name}</p>
-                      <p className="text-xs text-gray-600">Qty: {item.quantity}</p>
-                    </div>
-                    <span className="text-sm font-medium">
-                      ${(item.price * item.quantity).toFixed(2)}
-                    </span>
-                  </div>
-                ))}
-              </div>
+            <div className="order-summary-row">
+              <span className="order-summary-label">Shipping</span>
+              <span className="order-summary-value">
+                {shipping === 0 ? 'FREE' : `$${shipping.toFixed(2)}`}
+              </span>
             </div>
-
-            {/* Secure Checkout */}
-            <div className="mt-6 pt-4 border-t">
-              <div className="flex items-center text-sm text-gray-600">
-                <Lock size={16} className="mr-2" />
-                Secure checkout
+            <div className="order-summary-row">
+              <span className="order-summary-label">Tax</span>
+              <span className="order-summary-value">${tax.toFixed(2)}</span>
+            </div>
+            <div className="order-summary-total">
+              <div className="order-total-row">
+                <span>Total</span>
+                <span>${total.toFixed(2)}</span>
               </div>
-              <p className="text-xs text-gray-500 mt-2">
-                Your payment information is encrypted and secure
-              </p>
             </div>
           </div>
 
-          {/* Help Section */}
-          <div className="mt-6 bg-blue-50 p-4 rounded-lg">
-            <h4 className="font-medium mb-2">Need Help?</h4>
-            <p className="text-sm text-gray-600 mb-3">
-              Have questions about your order?
+          {/* Order Items */}
+          <div className="order-items-section">
+            <h4 className="order-items-title">Items ({cartData.items.length})</h4>
+            <div className="order-items-list">
+              {cartData.items.map(item => (
+                <div key={item.id} className="order-item">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="order-item-image"
+                  />
+                  <div className="order-item-details">
+                    <p className="order-item-name">{item.name}</p>
+                    <p className="order-item-quantity">Qty: {item.quantity}</p>
+                  </div>
+                  <span className="order-item-price">
+                    ${(item.price * item.quantity).toFixed(2)}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Secure Checkout */}
+          <div className="secure-checkout">
+            <div className="secure-badge">
+              <Lock size={16} className="secure-icon" />
+              Secure checkout
+            </div>
+            <p className="secure-note">
+              Your payment information is encrypted and secure
             </p>
-            <button
-              onClick={() => navigate('/support')}
-              className="text-sm text-blue-600 hover:text-blue-700"
-            >
-              Contact Support →
-            </button>
           </div>
         </div>
+      </div>
+
+      {/* Help Section */}
+      <div className="help-section">
+        <h4 className="help-title">Need Help?</h4>
+        <p className="help-text">
+          Have questions about your order?
+        </p>
+        <button
+          onClick={() => navigate('/support')}
+          className="help-link"
+        >
+          Contact Support →
+        </button>
       </div>
     </div>
   )

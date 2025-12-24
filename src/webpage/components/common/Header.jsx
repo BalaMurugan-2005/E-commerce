@@ -67,14 +67,7 @@ const Header = () => {
                 )}
               </Link>
               
-              <Link to="/cart" className="icon-link">
-                <ShoppingCart size={24} className="icon" />
-                {cartItems > 0 && (
-                  <span className="badge cart-badge">
-                    {cartItems}
-                  </span>
-                )}
-              </Link>
+              
               
               <Link to="/profile" className="icon-link">
                 <User size={24} className="icon" />
@@ -121,14 +114,8 @@ const Header = () => {
                 Products
               </Link>
               
-              <Link to="/wishlist" className="mobile-nav-link-with-icon">
-                <Heart size={20} className="mobile-link-icon" />
-                Wishlist ({wishlistItems})
-              </Link>
-              <Link to="/cart" className="mobile-nav-link-with-icon">
-                <ShoppingCart size={20} className="mobile-link-icon" />
-                Cart ({cartItems})
-              </Link>
+              
+              
               <Link to="/profile" className="mobile-nav-link-with-icon">
                 <User size={20} className="mobile-link-icon" />
                 Profile

@@ -17,6 +17,7 @@ import {
 import Loader from '../components/common/Loader'
 import usersData from '../data/users.json'
 import ordersData from '../data/orders.json'
+import '../styles/Profile.css'
 
 const Profile = () => {
   const [user, setUser] = useState(null)
@@ -53,37 +54,39 @@ const Profile = () => {
   if (!user) return <div className="error">User not found</div>
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-2">My Profile</h1>
-      <p className="text-gray-600 mb-8">Manage your account information and preferences</p>
+    <div className="profile-page">
+      <div className="page-header">
+        <h1 className="page-title">My Profile</h1>
+        <p className="page-subtitle">Manage your account information and preferences</p>
+      </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+      <div className="profile-layout">
         {/* Sidebar */}
-        <div>
-          <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-            <div className="p-6 border-b">
-              <div className="flex items-center">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+        <div className="profile-sidebar">
+          <div className="sidebar-card">
+            <div className="user-info">
+              <div className="user-avatar-container">
+                <div className="user-avatar">
                   {user.avatar ? (
                     <img
                       src={user.avatar}
                       alt={user.name}
-                      className="w-full h-full object-cover rounded-full"
+                      className="user-avatar-image"
                     />
                   ) : (
-                    <User size={32} className="text-blue-600" />
+                    <User size={32} className="user-avatar-icon" />
                   )}
                 </div>
-                <div>
-                  <h3 className="font-semibold">{user.name}</h3>
-                  <p className="text-sm text-gray-600">{user.email}</p>
-                  <p className="text-xs text-gray-500">Member since {user.joinDate}</p>
+                <div className="user-details">
+                  <h3 className="user-name">{user.name}</h3>
+                  <p className="user-email">{user.email}</p>
+                  <p className="user-join-date">Member since {user.joinDate}</p>
                 </div>
               </div>
             </div>
 
-            <nav className="p-4">
-              <ul className="space-y-2">
+            <nav className="sidebar-nav">
+              <ul className="nav-list">
                 {[
                   { id: 'overview', label: 'Overview', icon: User },
                   { id: 'personal', label: 'Personal Info', icon: User },
@@ -95,25 +98,21 @@ const Profile = () => {
                 ].map(item => {
                   const Icon = item.icon
                   return (
-                    <li key={item.id}>
+                    <li key={item.id} className="nav-item">
                       <button
                         onClick={() => setActiveTab(item.id)}
-                        className={`w-full text-left px-4 py-3 rounded-md flex items-center ${
-                          activeTab === item.id
-                            ? 'bg-blue-50 text-blue-600'
-                            : 'hover:bg-gray-50'
-                        }`}
+                        className={`nav-button ${activeTab === item.id ? 'active' : 'inactive'}`}
                       >
-                        <Icon size={18} className="mr-3" />
+                        <Icon size={18} className="nav-icon" />
                         {item.label}
                       </button>
                     </li>
                   )
                 })}
 
-                <li className="border-t pt-2 mt-2">
-                  <button className="w-full text-left px-4 py-3 rounded-md flex items-center text-red-600 hover:bg-red-50">
-                    <LogOut size={18} className="mr-3" />
+                <li className="nav-item">
+                  <button className="logout-button">
+                    <LogOut size={18} className="nav-icon" />
                     Logout
                   </button>
                 </li>
@@ -123,74 +122,74 @@ const Profile = () => {
         </div>
 
         {/* Main Content */}
-        <div className="lg:col-span-3">
+        <div className="profile-content">
           {activeTab === 'overview' && (
             <div>
               {/* Welcome Card */}
-              <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg shadow-md p-6 mb-6">
-                <h2 className="text-2xl font-bold mb-2">Welcome back, {user.name.split(' ')[0]}!</h2>
-                <p className="opacity-90">Here's what's happening with your account today.</p>
+              <div className="welcome-card">
+                <h2 className="welcome-title">Welcome back, {user.name.split(' ')[0]}!</h2>
+                <p className="welcome-subtitle">Here's what's happening with your account today.</p>
               </div>
 
               {/* Stats */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="text-sm text-gray-600">Total Orders</p>
-                      <p className="text-2xl font-bold">{ordersData.length}</p>
+              <div className="stats-grid">
+                <div className="stat-card">
+                  <div className="stat-content">
+                    <div className="stat-details">
+                      <p className="stat-label">Total Orders</p>
+                      <p className="stat-value">{ordersData.length}</p>
                     </div>
-                    <Package size={24} className="text-blue-600" />
+                    <Package size={24} className="stat-icon orders-icon" />
                   </div>
                 </div>
-                <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="text-sm text-gray-600">Wishlist Items</p>
-                      <p className="text-2xl font-bold">{user.wishlistCount || 0}</p>
+                <div className="stat-card">
+                  <div className="stat-content">
+                    <div className="stat-details">
+                      <p className="stat-label">Wishlist Items</p>
+                      <p className="stat-value">{user.wishlistCount || 0}</p>
                     </div>
-                    <Heart size={24} className="text-red-600" />
+                    <Heart size={24} className="stat-icon wishlist-icon" />
                   </div>
                 </div>
-                <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="text-sm text-gray-600">Account Age</p>
-                      <p className="text-2xl font-bold">{user.accountAge || 'New'}</p>
+                <div className="stat-card">
+                  <div className="stat-content">
+                    <div className="stat-details">
+                      <p className="stat-label">Account Age</p>
+                      <p className="stat-value">{user.accountAge || 'New'}</p>
                     </div>
-                    <Calendar size={24} className="text-green-600" />
+                    <Calendar size={24} className="stat-icon account-icon" />
                   </div>
                 </div>
               </div>
 
               {/* Recent Orders */}
-              <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-                <div className="flex justify-between items-center mb-6">
-                  <h3 className="text-lg font-semibold">Recent Orders</h3>
+              <div className="recent-orders">
+                <div className="orders-header">
+                  <h3 className="orders-title">Recent Orders</h3>
                   <Link
                     to="/orders"
-                    className="text-blue-600 hover:text-blue-700"
+                    className="view-all-link"
                   >
                     View All
                   </Link>
                 </div>
-                <div className="space-y-4">
+                <div className="order-list">
                   {recentOrders.map(order => (
-                    <div key={order.id} className="flex items-center justify-between border-b pb-4 last:border-0">
-                      <div>
-                        <p className="font-medium">Order #{order.orderNumber}</p>
-                        <p className="text-sm text-gray-600">
+                    <div key={order.id} className="order-item">
+                      <div className="order-info">
+                        <p className="order-number">Order #{order.orderNumber}</p>
+                        <p className="order-date">
                           {new Date(order.orderDate).toLocaleDateString()}
                         </p>
                       </div>
-                      <div className="text-right">
-                        <p className="font-medium">${order.total.toFixed(2)}</p>
-                        <span className={`inline-block px-2 py-1 text-xs rounded-full ${
+                      <div className="order-summary">
+                        <p className="order-total">${order.total.toFixed(2)}</p>
+                        <span className={`order-status ${
                           order.status === 'delivered' 
-                            ? 'bg-green-100 text-green-800'
+                            ? 'status-delivered'
                             : order.status === 'shipped'
-                            ? 'bg-blue-100 text-blue-800'
-                            : 'bg-yellow-100 text-yellow-800'
+                            ? 'status-shipped'
+                            : 'status-pending'
                         }`}>
                           {order.status}
                         </span>
@@ -203,28 +202,30 @@ const Profile = () => {
           )}
 
           {activeTab === 'personal' && (
-            <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-              <div className="flex justify-between items-center mb-6">
-                <h3 className="text-lg font-semibold">Personal Information</h3>
+            <div className="tab-content">
+              <div className="tab-header">
+                <h3 className="tab-title">Personal Information</h3>
                 {!isEditing ? (
-                  <button
-                    onClick={() => setIsEditing(true)}
-                    className="flex items-center text-blue-600 hover:text-blue-700"
-                  >
-                    <Edit2 size={18} className="mr-2" />
-                    Edit
-                  </button>
+                  <div className="edit-controls">
+                    <button
+                      onClick={() => setIsEditing(true)}
+                      className="edit-button"
+                    >
+                      <Edit2 size={18} className="edit-icon" />
+                      Edit
+                    </button>
+                  </div>
                 ) : (
-                  <div className="flex space-x-2">
+                  <div className="action-buttons">
                     <button
                       onClick={handleCancel}
-                      className="px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-50"
+                      className="cancel-button"
                     >
                       Cancel
                     </button>
                     <button
                       onClick={handleSave}
-                      className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+                      className="save-button"
                     >
                       Save Changes
                     </button>
@@ -232,174 +233,165 @@ const Profile = () => {
                 )}
               </div>
 
-              <div className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Full Name
-                    </label>
-                    {isEditing ? (
-                      <input
-                        type="text"
-                        value={editedUser.name}
-                        onChange={(e) => setEditedUser({...editedUser, name: e.target.value})}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md"
-                      />
-                    ) : (
-                      <div className="flex items-center">
-                        <User size={18} className="text-gray-400 mr-3" />
-                        <span>{user.name}</span>
-                      </div>
-                    )}
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Email Address
-                    </label>
-                    <div className="flex items-center">
-                      <Mail size={18} className="text-gray-400 mr-3" />
-                      <span>{user.email}</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Phone Number
-                    </label>
-                    {isEditing ? (
-                      <input
-                        type="tel"
-                        value={editedUser.phone}
-                        onChange={(e) => setEditedUser({...editedUser, phone: e.target.value})}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md"
-                      />
-                    ) : (
-                      <div className="flex items-center">
-                        <Phone size={18} className="text-gray-400 mr-3" />
-                        <span>{user.phone}</span>
-                      </div>
-                    )}
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Date of Birth
-                    </label>
-                    {isEditing ? (
-                      <input
-                        type="date"
-                        value={editedUser.dateOfBirth}
-                        onChange={(e) => setEditedUser({...editedUser, dateOfBirth: e.target.value})}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md"
-                      />
-                    ) : (
-                      <div className="flex items-center">
-                        <Calendar size={18} className="text-gray-400 mr-3" />
-                        <span>{user.dateOfBirth}</span>
-                      </div>
-                    )}
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Address
+              <div className="form-grid">
+                <div className="form-field">
+                  <label className="form-label">
+                    Full Name
                   </label>
                   {isEditing ? (
-                    <textarea
-                      value={editedUser.address}
-                      onChange={(e) => setEditedUser({...editedUser, address: e.target.value})}
-                      rows="3"
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                    <input
+                      type="text"
+                      value={editedUser.name}
+                      onChange={(e) => setEditedUser({...editedUser, name: e.target.value})}
+                      className="form-input"
                     />
                   ) : (
-                    <div className="flex items-start">
-                      <MapPin size={18} className="text-gray-400 mr-3 mt-1" />
-                      <span>{user.address}</span>
+                    <div className="info-display">
+                      <User size={18} className="info-icon" />
+                      <span className="info-text">{user.name}</span>
                     </div>
                   )}
                 </div>
+
+                <div className="form-field">
+                  <label className="form-label">
+                    Email Address
+                  </label>
+                  <div className="info-display">
+                    <Mail size={18} className="info-icon" />
+                    <span className="info-text">{user.email}</span>
+                  </div>
+                </div>
+
+                <div className="form-field">
+                  <label className="form-label">
+                    Phone Number
+                  </label>
+                  {isEditing ? (
+                    <input
+                      type="tel"
+                      value={editedUser.phone}
+                      onChange={(e) => setEditedUser({...editedUser, phone: e.target.value})}
+                      className="form-input"
+                    />
+                  ) : (
+                    <div className="info-display">
+                      <Phone size={18} className="info-icon" />
+                      <span className="info-text">{user.phone}</span>
+                    </div>
+                  )}
+                </div>
+
+                <div className="form-field">
+                  <label className="form-label">
+                    Date of Birth
+                  </label>
+                  {isEditing ? (
+                    <input
+                      type="date"
+                      value={editedUser.dateOfBirth}
+                      onChange={(e) => setEditedUser({...editedUser, dateOfBirth: e.target.value})}
+                      className="form-input"
+                    />
+                  ) : (
+                    <div className="info-display">
+                      <Calendar size={18} className="info-icon" />
+                      <span className="info-text">{user.dateOfBirth}</span>
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              <div className="form-field">
+                <label className="form-label">
+                  Address
+                </label>
+                {isEditing ? (
+                  <textarea
+                    value={editedUser.address}
+                    onChange={(e) => setEditedUser({...editedUser, address: e.target.value})}
+                    rows="3"
+                    className="form-textarea"
+                  />
+                ) : (
+                  <div className="info-display">
+                    <MapPin size={18} className="info-icon" />
+                    <span className="info-text">{user.address}</span>
+                  </div>
+                )}
               </div>
             </div>
           )}
 
           {activeTab === 'security' && (
-            <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-              <h3 className="text-lg font-semibold mb-6">Security Settings</h3>
-              <div className="space-y-6">
-                <div>
-                  <h4 className="font-medium mb-4">Change Password</h4>
-                  <div className="space-y-4 max-w-md">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
-                        Current Password
-                      </label>
-                      <input
-                        type="password"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
-                        New Password
-                      </label>
-                      <input
-                        type="password"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
-                        Confirm New Password
-                      </label>
-                      <input
-                        type="password"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md"
-                      />
-                    </div>
-                    <button className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
-                      Update Password
-                    </button>
+            <div className="tab-content">
+              <h3 className="tab-title">Security Settings</h3>
+              <div className="security-section">
+                <h4 className="section-title">Change Password</h4>
+                <div className="password-form">
+                  <div className="form-row">
+                    <label className="form-label">
+                      Current Password
+                    </label>
+                    <input
+                      type="password"
+                      className="form-input"
+                    />
                   </div>
-                </div>
-
-                <div className="border-t pt-6">
-                  <h4 className="font-medium mb-4">Two-Factor Authentication</h4>
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="font-medium">2FA is currently disabled</p>
-                      <p className="text-sm text-gray-600">
-                        Add an extra layer of security to your account
-                      </p>
-                    </div>
-                    <button className="px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-50">
-                      Enable
-                    </button>
+                  <div className="form-row">
+                    <label className="form-label">
+                      New Password
+                    </label>
+                    <input
+                      type="password"
+                      className="form-input"
+                    />
                   </div>
+                  <div className="form-row">
+                    <label className="form-label">
+                      Confirm New Password
+                    </label>
+                    <input
+                      type="password"
+                      className="form-input"
+                    />
+                  </div>
+                  <button className="save-button">
+                    Update Password
+                  </button>
                 </div>
+              </div>
 
-                <div className="border-t pt-6">
-                  <h4 className="font-medium mb-4">Login History</h4>
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <p className="font-medium">Current Session</p>
-                        <p className="text-sm text-gray-600">Now • This device</p>
-                      </div>
-                      <span className="text-green-600 text-sm font-medium">Active</span>
+              <div className="two-factor">
+                <div className="two-factor-info">
+                  <h4 className="two-factor-title">Two-Factor Authentication</h4>
+                  <p className="two-factor-description">
+                    Add an extra layer of security to your account
+                  </p>
+                </div>
+                <button className="enable-button">
+                  Enable
+                </button>
+              </div>
+
+              <div className="login-history">
+                <h4 className="section-title">Login History</h4>
+                <div className="session-list">
+                  <div className="session-item">
+                    <div className="session-info">
+                      <p className="session-title">Current Session</p>
+                      <p className="session-details">Now • This device</p>
                     </div>
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <p className="font-medium">Previous Session</p>
-                        <p className="text-sm text-gray-600">Yesterday • Chrome on Windows</p>
-                      </div>
-                      <button className="text-red-600 text-sm hover:text-red-700">
-                        Revoke
-                      </button>
+                    <span className="session-status">Active</span>
+                  </div>
+                  <div className="session-item">
+                    <div className="session-info">
+                      <p className="session-title">Previous Session</p>
+                      <p className="session-details">Yesterday • Chrome on Windows</p>
                     </div>
+                    <button className="revoke-button">
+                      Revoke
+                    </button>
                   </div>
                 </div>
               </div>
@@ -407,66 +399,62 @@ const Profile = () => {
           )}
 
           {activeTab === 'notifications' && (
-            <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-              <h3 className="text-lg font-semibold mb-6">Notification Preferences</h3>
-              <div className="space-y-6">
-                <div>
-                  <h4 className="font-medium mb-4">Email Notifications</h4>
-                  <div className="space-y-3">
-                    {[
-                      { label: 'Order updates', description: 'Get notified about your order status', default: true },
-                      { label: 'Promotional emails', description: 'Receive deals, discounts and special offers', default: true },
-                      { label: 'Product recommendations', description: 'Personalized product suggestions', default: false },
-                      { label: 'Newsletter', description: 'Weekly newsletter with latest updates', default: true }
-                    ].map((item, index) => (
-                      <div key={index} className="flex items-center justify-between">
-                        <div>
-                          <p className="font-medium">{item.label}</p>
-                          <p className="text-sm text-gray-600">{item.description}</p>
-                        </div>
-                        <label className="relative inline-flex items-center cursor-pointer">
-                          <input
-                            type="checkbox"
-                            defaultChecked={item.default}
-                            className="sr-only peer"
-                          />
-                          <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
-                        </label>
+            <div className="tab-content">
+              <h3 className="tab-title">Notification Preferences</h3>
+              <div className="notification-section">
+                <h4 className="section-title">Email Notifications</h4>
+                <div className="notification-list">
+                  {[
+                    { label: 'Order updates', description: 'Get notified about your order status', default: true },
+                    { label: 'Promotional emails', description: 'Receive deals, discounts and special offers', default: true },
+                    { label: 'Product recommendations', description: 'Personalized product suggestions', default: false },
+                    { label: 'Newsletter', description: 'Weekly newsletter with latest updates', default: true }
+                  ].map((item, index) => (
+                    <div key={index} className="notification-item">
+                      <div className="notification-info">
+                        <p className="notification-title">{item.label}</p>
+                        <p className="notification-description">{item.description}</p>
                       </div>
-                    ))}
-                  </div>
+                      <label className="toggle-switch">
+                        <input
+                          type="checkbox"
+                          defaultChecked={item.default}
+                          className="toggle-input"
+                        />
+                        <span className="toggle-slider"></span>
+                      </label>
+                    </div>
+                  ))}
                 </div>
+              </div>
 
-                <div className="border-t pt-6">
-                  <h4 className="font-medium mb-4">Push Notifications</h4>
-                  <div className="space-y-3">
-                    {[
-                      { label: 'Order alerts', description: 'Get push notifications for order updates', default: true },
-                      { label: 'Price drop alerts', description: 'Notify when items in wishlist drop in price', default: true },
-                      { label: 'Cart reminders', description: 'Reminders about items in your cart', default: false }
-                    ].map((item, index) => (
-                      <div key={index} className="flex items-center justify-between">
-                        <div>
-                          <p className="font-medium">{item.label}</p>
-                          <p className="text-sm text-gray-600">{item.description}</p>
-                        </div>
-                        <label className="relative inline-flex items-center cursor-pointer">
-                          <input
-                            type="checkbox"
-                            defaultChecked={item.default}
-                            className="sr-only peer"
-                          />
-                          <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
-                        </label>
+              <div className="notification-section">
+                <h4 className="section-title">Push Notifications</h4>
+                <div className="notification-list">
+                  {[
+                    { label: 'Order alerts', description: 'Get push notifications for order updates', default: true },
+                    { label: 'Price drop alerts', description: 'Notify when items in wishlist drop in price', default: true },
+                    { label: 'Cart reminders', description: 'Reminders about items in your cart', default: false }
+                  ].map((item, index) => (
+                    <div key={index} className="notification-item">
+                      <div className="notification-info">
+                        <p className="notification-title">{item.label}</p>
+                        <p className="notification-description">{item.description}</p>
                       </div>
-                    ))}
-                  </div>
+                      <label className="toggle-switch">
+                        <input
+                          type="checkbox"
+                          defaultChecked={item.default}
+                          className="toggle-input"
+                        />
+                        <span className="toggle-slider"></span>
+                      </label>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
           )}
-
-          {/* Add other tabs similarly */}
         </div>
       </div>
     </div>

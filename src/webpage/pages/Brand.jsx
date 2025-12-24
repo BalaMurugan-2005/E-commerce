@@ -7,6 +7,7 @@ import Pagination from '../components/common/Pagination'
 import Loader from '../components/common/Loader'
 import productsData from '../data/products.json'
 import brandsData from '../data/brands.json'
+import '../styles/Brand.css'
 
 const Brand = () => {
   const { id } = useParams()
@@ -46,51 +47,51 @@ const Brand = () => {
   if (!brand) return <div className="error">Brand not found</div>
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="brand-page">
       {/* Brand Header */}
-      <div className="mb-8">
-        <div className="flex items-center mb-4">
-          <Link to="/" className="text-gray-600 hover:text-gray-900">
+      <div className="brand-header">
+        <div className="breadcrumb">
+          <Link to="/" className="breadcrumb-link">
             Home
           </Link>
-          <span className="mx-2 text-gray-400">/</span>
-          <Link to="/brands" className="text-gray-600 hover:text-gray-900">
+          <span className="breadcrumb-separator">/</span>
+          <Link to="/brands" className="breadcrumb-link">
             Brands
           </Link>
-          <span className="mx-2 text-gray-400">/</span>
-          <span className="font-medium">{brand.name}</span>
+          <span className="breadcrumb-separator">/</span>
+          <span className="breadcrumb-current">{brand.name}</span>
         </div>
         
-        <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-          <div className="flex flex-col md:flex-row items-center">
-            <div className="w-32 h-32 mb-6 md:mb-0 md:mr-8">
+        <div className="brand-info-card">
+          <div className="brand-info-content">
+            <div className="brand-logo-container">
               <img
                 src={brand.logo}
                 alt={brand.name}
-                className="w-full h-full object-contain"
+                className="brand-logo"
               />
             </div>
             
-            <div className="flex-1">
-              <h1 className="text-3xl font-bold mb-2">{brand.name}</h1>
-              <p className="text-gray-600 mb-4">{brand.description}</p>
+            <div className="brand-details">
+              <h1 className="brand-name">{brand.name}</h1>
+              <p className="brand-description">{brand.description}</p>
               
-              <div className="flex flex-wrap gap-2 mb-4">
+              <div className="brand-features">
                 {brand.features.map((feature, index) => (
-                  <div key={index} className="flex items-center text-sm text-gray-600">
-                    <Check size={16} className="text-green-500 mr-1" />
+                  <div key={index} className="feature-item">
+                    <Check size={16} className="feature-icon" />
                     {feature}
                   </div>
                 ))}
               </div>
               
-              <div className="flex items-center">
-                <div className="flex items-center mr-6">
-                  <Star size={20} className="text-yellow-400 mr-1" />
-                  <span className="font-medium">{brand.rating.toFixed(1)}</span>
-                  <span className="text-gray-600 ml-1">({brand.reviewCount} reviews)</span>
+              <div className="brand-stats">
+                <div className="rating-container">
+                  <Star size={20} className="rating-star" />
+                  <span className="rating-value">{brand.rating.toFixed(1)}</span>
+                  <span className="rating-count">({brand.reviewCount} reviews)</span>
                 </div>
-                <div className="text-gray-600">
+                <div className="established-year">
                   Established {brand.establishedYear}
                 </div>
               </div>
@@ -100,19 +101,19 @@ const Brand = () => {
       </div>
 
       {/* Products Count */}
-      <div className="flex justify-between items-center mb-6">
-        <h2 className="text-xl font-semibold">{brand.name} Products</h2>
-        <p className="text-gray-600">{products.length} products</p>
+      <div className="products-count-header">
+        <h2 className="products-title">{brand.name} Products</h2>
+        <p className="products-count">{products.length} products</p>
       </div>
 
       {/* Products Grid */}
       {products.length === 0 ? (
-        <div className="text-center py-12">
-          <p className="text-gray-600 text-lg">No products found for this brand.</p>
+        <div className="no-products">
+          <p className="no-products-text">No products found for this brand.</p>
         </div>
       ) : (
         <>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-8">
+          <div className="products-grid">
             {currentProducts.map(product => (
               <ProductCard
                 key={product.id}
@@ -136,11 +137,11 @@ const Brand = () => {
 
       {/* Brand Story */}
       {brand.story && (
-        <div className="mt-12 bg-gray-50 rounded-lg p-6">
-          <h2 className="text-2xl font-bold mb-4">Our Story</h2>
-          <div className="prose max-w-none">
+        <div className="brand-story">
+          <h2 className="story-title">Our Story</h2>
+          <div className="story-content">
             {brand.story.split('\n').map((paragraph, index) => (
-              <p key={index} className="mb-4 text-gray-700">
+              <p key={index} className="story-paragraph">
                 {paragraph}
               </p>
             ))}

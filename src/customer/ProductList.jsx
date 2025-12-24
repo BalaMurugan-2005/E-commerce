@@ -8,7 +8,6 @@ import Loader from '../components/common/Loader'
 import productsData from '../data/products.json'
 import categoriesData from '../data/categories.json'
 import brandsData from '../data/brands.json'
-import '../styles/ProductList.css'
 
 const ProductList = () => {
   const location = useLocation()
@@ -107,10 +106,10 @@ const ProductList = () => {
   if (loading) return <Loader />
 
   return (
-    <div className="product-list-page">
-      <div className="product-list-layout">
+    <div className="container mx-auto px-4 py-8">
+      <div className="flex flex-col lg:flex-row gap-8">
         {/* Filters Sidebar */}
-        <div className="filters-sidebar">
+        <div className="lg:w-1/4">
           <ProductFilters
             categories={categoriesData}
             brands={brandsData}
@@ -121,31 +120,29 @@ const ProductList = () => {
         </div>
 
         {/* Products Section */}
-        <div className="products-section">
+        <div className="lg:w-3/4">
           {/* Header */}
-          <div className="products-header">
-            <div className="header-content">
-              <div className="header-info">
-                <h1 className="header-title">All Products</h1>
-                <p className="header-subtitle">
+          <div className="bg-white p-4 rounded-lg shadow-sm mb-6">
+            <div className="flex flex-col md:flex-row justify-between items-center">
+              <div>
+                <h1 className="text-2xl font-bold">All Products</h1>
+                <p className="text-gray-600 mt-1">
                   Showing {filteredProducts.length} products
                 </p>
               </div>
               
-              <div className="header-controls">
+              <div className="flex items-center space-x-4 mt-4 md:mt-0">
                 {/* View Toggle */}
-                <div className="view-toggle">
+                <div className="flex border border-gray-300 rounded-md">
                   <button
                     onClick={() => setViewMode('grid')}
-                    className={`view-button ${viewMode === 'grid' ? 'active' : ''}`}
-                    aria-label="Grid view"
+                    className={`p-2 ${viewMode === 'grid' ? 'bg-gray-100' : ''}`}
                   >
                     <Grid size={20} />
                   </button>
                   <button
                     onClick={() => setViewMode('list')}
-                    className={`view-button ${viewMode === 'list' ? 'active' : ''}`}
-                    aria-label="List view"
+                    className={`p-2 ${viewMode === 'list' ? 'bg-gray-100' : ''}`}
                   >
                     <List size={20} />
                   </button>
@@ -155,8 +152,7 @@ const ProductList = () => {
                 <select
                   value={sortBy}
                   onChange={handleSortChange}
-                  className="sort-dropdown"
-                  aria-label="Sort products"
+                  className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 >
                   <option value="popular">Most Popular</option>
                   <option value="newest">Newest Arrivals</option>
@@ -170,11 +166,11 @@ const ProductList = () => {
 
           {/* Products Grid/List */}
           {currentProducts.length === 0 ? (
-            <div className="empty-state">
-              <p className="empty-message">No products found matching your criteria.</p>
+            <div className="text-center py-12">
+              <p className="text-gray-600 text-lg">No products found matching your criteria.</p>
             </div>
           ) : viewMode === 'grid' ? (
-            <div className="grid-view">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {currentProducts.map(product => (
                 <ProductCard
                   key={product.id}
@@ -185,37 +181,37 @@ const ProductList = () => {
               ))}
             </div>
           ) : (
-            <div className="list-view">
+            <div className="space-y-4">
               {currentProducts.map(product => (
-                <div key={product.id} className="list-item">
-                  <div className="list-item-content">
+                <div key={product.id} className="bg-white p-4 rounded-lg shadow-sm">
+                  <div className="flex">
                     <img
                       src={product.image}
                       alt={product.name}
-                      className="list-item-image"
+                      className="w-32 h-32 object-cover rounded mr-6"
                     />
-                    <div className="list-item-details">
-                      <h3 className="list-item-name">{product.name}</h3>
-                      <p className="list-item-description">{product.description}</p>
-                      <div className="list-item-footer">
-                        <div className="list-item-price">
-                          <span className="current-price">${product.price.toFixed(2)}</span>
+                    <div className="flex-1">
+                      <h3 className="text-lg font-semibold mb-2">{product.name}</h3>
+                      <p className="text-gray-600 mb-3 line-clamp-2">{product.description}</p>
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <span className="text-2xl font-bold">${product.price.toFixed(2)}</span>
                           {product.discountPrice && (
-                            <span className="discount-price">
+                            <span className="ml-2 text-gray-500 line-through">
                               ${product.discountPrice.toFixed(2)}
                             </span>
                           )}
                         </div>
-                        <div className="list-item-actions">
+                        <div className="flex space-x-2">
                           <button
                             onClick={() => addToWishlist(product)}
-                            className="wishlist-button"
+                            className="p-2 border border-gray-300 rounded hover:bg-gray-100"
                           >
                             Add to Wishlist
                           </button>
                           <button
                             onClick={() => addToCart(product)}
-                            className="cart-button"
+                            className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
                           >
                             Add to Cart
                           </button>

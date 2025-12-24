@@ -7,6 +7,7 @@ import Loader from '../components/common/Loader'
 import productsData from '../data/products.json'
 import categoriesData from '../data/categories.json'
 import subcategoriesData from '../data/subcategories.json'
+import '../styles/Category.css'
 
 const Category = () => {
   const { id } = useParams()
@@ -49,51 +50,51 @@ const Category = () => {
   if (!category) return <div className="error">Category not found</div>
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="category-page">
       {/* Category Header */}
-      <div className="mb-8">
-        <div className="flex items-center mb-4">
-          <Link to="/" className="text-gray-600 hover:text-gray-900">
+      <div className="category-header">
+        <div className="breadcrumb">
+          <Link to="/" className="breadcrumb-link">
             Home
           </Link>
-          <span className="mx-2 text-gray-400">/</span>
-          <Link to="/categories" className="text-gray-600 hover:text-gray-900">
+          <span className="breadcrumb-separator">/</span>
+          <Link to="/categories" className="breadcrumb-link">
             Categories
           </Link>
-          <span className="mx-2 text-gray-400">/</span>
-          <span className="font-medium">{category.name}</span>
+          <span className="breadcrumb-separator">/</span>
+          <span className="breadcrumb-current">{category.name}</span>
         </div>
         
-        <div className="flex flex-col md:flex-row md:items-center justify-between mb-6">
-          <div>
-            <h1 className="text-3xl font-bold mb-2">{category.name}</h1>
-            <p className="text-gray-600">{category.description}</p>
+        <div className="category-info">
+          <div className="category-details">
+            <h1 className="category-name">{category.name}</h1>
+            <p className="category-description">{category.description}</p>
           </div>
-          <div className="mt-4 md:mt-0">
-            <p className="text-gray-600">{products.length} products</p>
+          <div className="products-count">
+            <p>{products.length} products</p>
           </div>
         </div>
       </div>
 
       {/* Subcategories */}
       {subcategories.length > 0 && (
-        <div className="mb-12">
-          <h2 className="text-xl font-semibold mb-4">Subcategories</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div className="subcategories-section">
+          <h2 className="subcategories-title">Subcategories</h2>
+          <div className="subcategories-grid">
             {subcategories.map(subcategory => (
               <Link
                 key={subcategory.id}
                 to={`/category/${subcategory.id}`}
-                className="bg-white rounded-lg shadow-sm p-4 text-center hover:shadow-md transition-shadow"
+                className="subcategory-card"
               >
-                <div className="w-12 h-12 mx-auto mb-3">
+                <div className="subcategory-icon-container">
                   <img
                     src={subcategory.icon}
                     alt={subcategory.name}
-                    className="w-full h-full object-contain"
+                    className="subcategory-icon"
                   />
                 </div>
-                <h3 className="font-medium text-sm">{subcategory.name}</h3>
+                <h3 className="subcategory-name">{subcategory.name}</h3>
               </Link>
             ))}
           </div>
@@ -102,12 +103,12 @@ const Category = () => {
 
       {/* Products Grid */}
       {products.length === 0 ? (
-        <div className="text-center py-12">
-          <p className="text-gray-600 text-lg">No products found in this category.</p>
+        <div className="no-products">
+          <p className="no-products-text">No products found in this category.</p>
         </div>
       ) : (
         <>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-8">
+          <div className="products-grid">
             {currentProducts.map(product => (
               <ProductCard
                 key={product.id}

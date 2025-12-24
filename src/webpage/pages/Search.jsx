@@ -8,7 +8,7 @@ import Loader from '../components/common/Loader'
 import productsData from '../data/products.json'
 import categoriesData from '../data/categories.json'
 import brandsData from '../data/brands.json'
-
+import '../styles/Search.css'
 const Search = () => {
   const location = useLocation()
   const queryParams = new URLSearchParams(location.search)
@@ -126,20 +126,20 @@ const Search = () => {
   if (loading) return <Loader />
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="search-page">
       {/* Search Header */}
-      <div className="mb-8">
-        <h1 className="text-2xl font-bold mb-4">
-          Search Results for "{searchQuery}"
+      <div className="search-header">
+        <h1 className="search-title">
+          Search Results for <span className="search-query">"{searchQuery}"</span>
         </h1>
-        <p className="text-gray-600">
+        <p className="search-results-count">
           Found {filteredResults.length} {filteredResults.length === 1 ? 'product' : 'products'}
         </p>
       </div>
 
-      <div className="flex flex-col lg:flex-row gap-8">
+      <div className="search-layout">
         {/* Filters Sidebar */}
-        <div className="lg:w-1/4">
+        <div className="search-filters">
           <ProductFilters
             categories={categoriesData}
             brands={brandsData}
@@ -150,29 +150,31 @@ const Search = () => {
         </div>
 
         {/* Results Section */}
-        <div className="lg:w-3/4">
+        <div className="results-section">
           {/* Results Header */}
-          <div className="bg-white p-4 rounded-lg shadow-sm mb-6">
-            <div className="flex flex-col md:flex-row justify-between items-center">
-              <div className="flex items-center">
-                <SearchIcon size={20} className="text-gray-400 mr-2" />
-                <span className="text-gray-600">
+          <div className="results-header">
+            <div className="header-content">
+              <div className="results-info">
+                <SearchIcon size={20} className="results-icon" />
+                <span className="results-count">
                   {filteredResults.length} results
                 </span>
               </div>
               
-              <div className="flex items-center space-x-4 mt-4 md:mt-0">
+              <div className="results-controls">
                 {/* View Toggle */}
-                <div className="flex border border-gray-300 rounded-md">
+                <div className="view-toggle">
                   <button
                     onClick={() => setViewMode('grid')}
-                    className={`p-2 ${viewMode === 'grid' ? 'bg-gray-100' : ''}`}
+                    className={`view-button ${viewMode === 'grid' ? 'active' : ''}`}
+                    aria-label="Grid view"
                   >
                     <Grid size={20} />
                   </button>
                   <button
                     onClick={() => setViewMode('list')}
-                    className={`p-2 ${viewMode === 'list' ? 'bg-gray-100' : ''}`}
+                    className={`view-button ${viewMode === 'list' ? 'active' : ''}`}
+                    aria-label="List view"
                   >
                     <List size={20} />
                   </button>
@@ -182,7 +184,8 @@ const Search = () => {
                 <select
                   value={sortBy}
                   onChange={handleSortChange}
-                  className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="sort-dropdown"
+                  aria-label="Sort results"
                 >
                   <option value="relevance">Most Relevant</option>
                   <option value="newest">Newest Arrivals</option>
@@ -196,17 +199,17 @@ const Search = () => {
 
           {/* Results Grid/List */}
           {currentProducts.length === 0 ? (
-            <div className="text-center py-12">
-              <div className="mb-4">
-                <SearchIcon size={48} className="text-gray-400 mx-auto" />
+            <div className="empty-state">
+              <div className="empty-icon-container">
+                <SearchIcon size={48} className="empty-icon" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">No products found</h3>
-              <p className="text-gray-600">
+              <h3 className="empty-title">No products found</h3>
+              <p className="empty-message">
                 Try adjusting your search or filter to find what you're looking for.
               </p>
             </div>
           ) : viewMode === 'grid' ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid-view">
               {currentProducts.map(product => (
                 <ProductCard
                   key={product.id}
@@ -217,37 +220,37 @@ const Search = () => {
               ))}
             </div>
           ) : (
-            <div className="space-y-4">
+            <div className="list-view">
               {currentProducts.map(product => (
-                <div key={product.id} className="bg-white p-4 rounded-lg shadow-sm">
-                  <div className="flex">
+                <div key={product.id} className="list-item">
+                  <div className="list-item-content">
                     <img
                       src={product.image}
                       alt={product.name}
-                      className="w-32 h-32 object-cover rounded mr-6"
+                      className="list-item-image"
                     />
-                    <div className="flex-1">
-                      <h3 className="text-lg font-semibold mb-2">{product.name}</h3>
-                      <p className="text-gray-600 mb-3 line-clamp-2">{product.description}</p>
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <span className="text-2xl font-bold">${product.price.toFixed(2)}</span>
+                    <div className="list-item-details">
+                      <h3 className="list-item-name">{product.name}</h3>
+                      <p className="list-item-description">{product.description}</p>
+                      <div className="list-item-footer">
+                        <div className="list-item-price">
+                          <span className="current-price">${product.price.toFixed(2)}</span>
                           {product.discountPrice && (
-                            <span className="ml-2 text-gray-500 line-through">
+                            <span className="discount-price">
                               ${product.discountPrice.toFixed(2)}
                             </span>
                           )}
                         </div>
-                        <div className="flex space-x-2">
+                        <div className="list-item-actions">
                           <button
                             onClick={() => addToWishlist(product)}
-                            className="p-2 border border-gray-300 rounded hover:bg-gray-100"
+                            className="wishlist-button"
                           >
                             Add to Wishlist
                           </button>
                           <button
                             onClick={() => addToCart(product)}
-                            className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+                            className="cart-button"
                           >
                             Add to Cart
                           </button>

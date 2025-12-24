@@ -1,0 +1,243 @@
+/* Brand Page Base Styles */
+.brand-page {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* Error Message */
+.error {
+  color: #dc2626;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Brand Header */
+.brand-header {
+  margin-bottom: 2rem;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.breadcrumb-link {
+  color: #4b5563;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumb-link:hover {
+  color: #111827;
+}
+
+.breadcrumb-separator {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  color: #9ca3af;
+}
+
+.breadcrumb-current {
+  font-weight: 500;
+}
+
+/* Brand Info Card */
+.brand-info-card {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.brand-info-content {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .brand-info-content {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+/* Brand Logo */
+.brand-logo-container {
+  width: 8rem;
+  height: 8rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .brand-logo-container {
+    margin-bottom: 0;
+    margin-right: 2rem;
+  }
+}
+
+.brand-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Brand Details */
+.brand-details {
+  flex: 1 1 0%;
+}
+
+.brand-name {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.brand-description {
+  color: #4b5563;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+/* Brand Features */
+.brand-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #4b5563;
+}
+
+.feature-icon {
+  color: #10b981;
+  margin-right: 0.25rem;
+}
+
+/* Brand Stats */
+.brand-stats {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.rating-container {
+  display: flex;
+  align-items: center;
+}
+
+.rating-star {
+  color: #fbbf24;
+  margin-right: 0.25rem;
+}
+
+.rating-value {
+  font-weight: 500;
+  margin-right: 0.25rem;
+}
+
+.rating-count {
+  color: #4b5563;
+  margin-left: 0.25rem;
+}
+
+.established-year {
+  color: #4b5563;
+}
+
+/* Products Count Header */
+.products-count-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.products-title {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+}
+
+.products-count {
+  color: #4b5563;
+}
+
+/* No Products Message */
+.no-products {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.no-products-text {
+  color: #4b5563;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+/* Products Grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 640px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .products-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Brand Story */
+.brand-story {
+  margin-top: 3rem;
+  background-color: #f9fafb;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+}
+
+.story-title {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.story-content {
+  max-width: none;
+}
+
+.story-paragraph {
+  color: #374151;
+  margin-bottom: 1rem;
+  line-height: 1.625;
+}
