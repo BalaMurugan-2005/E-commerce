@@ -1,0 +1,178 @@
+[
+  {
+    "id": 1,
+    "productId": 1,
+    "userId": 2,
+    "userName": "Sarah Johnson",
+    "userAvatar": "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&auto=format&fit=crop&facepad=2",
+    "rating": 5,
+    "title": "Amazing sound quality!",
+    "comment": "These headphones exceeded my expectations. The noise cancellation is incredible and battery life lasts all day. Very comfortable for long listening sessions.",
+    "date": "2024-03-20",
+    "verifiedPurchase": true,
+    "helpful": 24,
+    "images": [
+      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&auto=format&fit=crop"
+    ]
+  },
+  {
+    "id": 2,
+    "productId": 1,
+    "userId": 3,
+    "userName": "Michael Chen",
+    "userAvatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&facepad=2",
+    "rating": 4,
+    "title": "Good but could be better",
+    "comment": "Sound quality is excellent and they're comfortable. However, the touch controls can be finicky and case is a bit bulky for travel.",
+    "date": "2024-03-18",
+    "verifiedPurchase": true,
+    "helpful": 12,
+    "images": []
+  },
+  {
+    "id": 3,
+    "productId": 2,
+    "userId": 1,
+    "userName": "John Smith",
+    "userAvatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&auto=format&fit=crop&facepad=2",
+    "rating": 5,
+    "title": "Perfect fitness companion",
+    "comment": "The heart rate monitor is accurate and battery lasts a full week. Love the sleep tracking feature and the screen is bright and clear.",
+    "date": "2024-03-22",
+    "verifiedPurchase": true,
+    "helpful": 18,
+    "images": [
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&auto=format&fit=crop"
+    ]
+  },
+  {
+    "id": 4,
+    "productId": 3,
+    "userId": 4,
+    "userName": "Emma Wilson",
+    "userAvatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&auto=format&fit=crop&facepad=2",
+    "rating": 5,
+    "title": "Most comfortable t-shirt ever",
+    "comment": "The fabric is so soft and breathable. True to size and holds up well in the wash. Will definitely buy more colors!",
+    "date": "2024-03-15",
+    "verifiedPurchase": true,
+    "helpful": 9,
+    "images": []
+  },
+  {
+    "id": 5,
+    "productId": 4,
+    "userId": 5,
+    "userName": "David Brown",
+    "userAvatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&facepad=2",
+    "rating": 4,
+    "title": "Beautiful mugs",
+    "comment": "Love the design and they feel great in hand. Microwave safe and dishwasher safe which is a plus. Only wish they had more color options.",
+    "date": "2024-03-10",
+    "verifiedPurchase": true,
+    "helpful": 7,
+    "images": [
+      "https://images.unsplash.com/photo-1514228742587-6b1558fcf93a?w=400&auto=format&fit=crop"
+    ]
+  },
+  {
+    "id": 6,
+    "productId": 5,
+    "userId": 6,
+    "userName": "Lisa Taylor",
+    "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&facepad=2",
+    "rating": 5,
+    "title": "Gaming beast!",
+    "comment": "Handles all my games at max settings without breaking a sweat. Cooling system is excellent and keyboard feels great. Worth every penny.",
+    "date": "2024-03-25",
+    "verifiedPurchase": true,
+    "helpful": 32,
+    "images": []
+  },
+  {
+    "id": 7,
+    "productId": 6,
+    "userId": 7,
+    "userName": "Robert Miller",
+    "userAvatar": "https://images.unsplash.com/photo-1507591064344-4c6ce005-128?w=100&auto=format&fit=crop&facepad=2",
+    "rating": 4,
+    "title": "Great yoga mat",
+    "comment": "Perfect thickness for joint comfort and excellent grip. Carrying strap is convenient. Could be slightly wider for taller people.",
+    "date": "2024-03-12",
+    "verifiedPurchase": true,
+    "helpful": 11,
+    "images": []
+  },
+  {
+    "id": 8,
+    "productId": 7,
+    "userId": 8,
+    "userName": "Jennifer Lee",
+    "userAvatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&auto=format&fit=crop&facepad=2",
+    "rating": 5,
+    "title": "Perfect desk lamp",
+    "comment": "Love the adjustable brightness and color temperature. USB port is handy for charging phone. Sleek design fits my workspace perfectly.",
+    "date": "2024-03-08",
+    "verifiedPurchase": true,
+    "helpful": 8,
+    "images": []
+  },
+  {
+    "id": 9,
+    "productId": 8,
+    "userId": 9,
+    "userName": "Thomas Anderson",
+    "userAvatar": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&auto=format&fit=crop&facepad=2",
+    "rating": 5,
+    "title": "Quality leather wallet",
+    "comment": "Genuine leather that smells amazing. Plenty of card slots and RFID protection works great. Gets better with age.",
+    "date": "2024-03-05",
+    "verifiedPurchase": true,
+    "helpful": 14,
+    "images": [
+      "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=400&auto=format&fit=crop"
+    ]
+  },
+  {
+    "id": 10,
+    "productId": 9,
+    "userId": 10,
+    "userName": "Maria Garcia",
+    "userAvatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&auto=format&fit=crop&facepad=2",
+    "rating": 5,
+    "title": "Impressive sound for size",
+    "comment": "Bluetooth connects instantly and sound is surprisingly full for such a small speaker. Waterproof feature gives peace of mind outdoors.",
+    "date": "2024-03-28",
+    "verifiedPurchase": true,
+    "helpful": 21,
+    "images": []
+  },
+  {
+    "id": 11,
+    "productId": 10,
+    "userId": 2,
+    "userName": "Sarah Johnson",
+    "userAvatar": "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&auto=format&fit=crop&facepad=2",
+    "rating": 5,
+    "title": "Best running shoes ever",
+    "comment": "Lightweight yet supportive. Cushioning is perfect for long runs. Breathable material keeps feet cool. Already logged 50 miles in them.",
+    "date": "2024-03-24",
+    "verifiedPurchase": true,
+    "helpful": 19,
+    "images": []
+  },
+  {
+    "id": 12,
+    "productId": 2,
+    "userId": 4,
+    "userName": "Emma Wilson",
+    "userAvatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&auto=format&fit=crop&facepad=2",
+    "rating": 4,
+    "title": "Good smartwatch",
+    "comment": "Accurate fitness tracking and nice display. Battery life could be better and app needs some improvements. Overall happy with purchase.",
+    "date": "2024-03-19",
+    "verifiedPurchase": true,
+    "helpful": 6,
+    "images": []
+  }
+]

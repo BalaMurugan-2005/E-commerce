@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "categoryId": 1,
+    "name": "Headphones",
+    "icon": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=100&auto=format&fit=crop"
+  },
+  {
+    "id": 2,
+    "categoryId": 1,
+    "name": "Speakers",
+    "icon": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=100&auto=format&fit=crop"
+  },
+  {
+    "id": 3,
+    "categoryId": 1,
+    "name": "Chargers",
+    "icon": "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=100&auto=format&fit=crop"
+  },
+  {
+    "id": 4,
+    "categoryId": 2,
+    "name": "Smart Watches",
+    "icon": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=100&auto=format&fit=crop"
+  },
+  {
+    "id": 5,
+    "categoryId": 2,
+    "name": "Fitness Bands",
+    "icon": "https://images.unsplash.com/photo-1576243345690-4e4b79b63288?w=100&auto=format&fit=crop"
+  },
+  {
+    "id": 6,
+    "categoryId": 3,
+    "name": "T-Shirts",
+    "icon": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=100&auto=format&fit=crop"
+  },
+  {
+    "id": 7,
+    "categoryId": 3,
+    "name": "Jeans",
+    "icon": "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=100&auto=format&fit=crop"
+  },
+  {
+    "id": 8,
+    "categoryId": 4,
+    "name": "Kitchenware",
+    "icon": "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=100&auto=format&fit=crop"
+  },
+  {
+    "id": 9,
+    "categoryId": 4,
+    "name": "Home Decor",
+    "icon": "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=100&auto=format&fit=crop"
+  },
+  {
+    "id": 10,
+    "categoryId": 5,
+    "name": "Laptops",
+    "icon": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=100&auto=format&fit=crop"
+  }
+]

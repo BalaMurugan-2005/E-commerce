@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "John Smith",
+    "email": "john.smith@example.com",
+    "phone": "+1 (555) 123-4567",
+    "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&auto=format&fit=crop&facepad=2",
+    "joinDate": "2023-01-15",
+    "address": "123 Main Street, New York, NY 10001",
+    "dateOfBirth": "1990-05-15",
+    "wishlistCount": 5,
+    "accountAge": "1 year"
+  },
+  {
+    "id": 2,
+    "name": "Sarah Johnson",
+    "email": "sarah.j@example.com",
+    "phone": "+1 (555) 234-5678",
+    "avatar": "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=200&auto=format&fit=crop&facepad=2",
+    "joinDate": "2023-03-22",
+    "address": "456 Oak Avenue, Los Angeles, CA 90001",
+    "dateOfBirth": "1988-08-20",
+    "wishlistCount": 12,
+    "accountAge": "10 months"
+  },
+  {
+    "id": 3,
+    "name": "Michael Chen",
+    "email": "michael.chen@example.com",
+    "phone": "+1 (555) 345-6789",
+    "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&auto=format&fit=crop&facepad=2",
+    "joinDate": "2022-11-05",
+    "address": "789 Pine Road, Chicago, IL 60601",
+    "dateOfBirth": "1992-03-10",
+    "wishlistCount": 8,
+    "accountAge": "1 year 5 months"
+  },
+  {
+    "id": 4,
+    "name": "Emma Wilson",
+    "email": "emma.w@example.com",
+    "phone": "+1 (555) 456-7890",
+    "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&auto=format&fit=crop&facepad=2",
+    "joinDate": "2023-06-18",
+    "address": "101 Maple Lane, Houston, TX 77001",
+    "dateOfBirth": "1995-12-05",
+    "wishlistCount": 3,
+    "accountAge": "7 months"
+  },
+  {
+    "id": 5,
+    "name": "David Brown",
+    "email": "david.b@example.com",
+    "phone": "+1 (555) 567-8901",
+    "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&auto=format&fit=crop&facepad=2",
+    "joinDate": "2022-08-30",
+    "address": "202 Cedar Street, Phoenix, AZ 85001",
+    "dateOfBirth": "1985-07-22",
+    "wishlistCount": 15,
+    "accountAge": "1 year 8 months"
+  },
+  {
+    "id": 6,
+    "name": "Lisa Taylor",
+    "email": "lisa.t@example.com",
+    "phone": "+1 (555) 678-9012",
+    "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&auto=format&fit=crop&facepad=2",
+    "joinDate": "2023-02-14",
+    "address": "303 Elm Drive, Philadelphia, PA 19101",
+    "dateOfBirth": "1991-09-30",
+    "wishlistCount": 7,
+    "accountAge": "11 months"
+  },
+  {
+    "id": 7,
+    "name": "Robert Miller",
+    "email": "robert.m@example.com",
+    "phone": "+1 (555) 789-0123",
+    "avatar": "https://images.unsplash.com/photo-1507591064344-4c6ce005-128?w=200&auto=format&fit=crop&facepad=2",
+    "joinDate": "2023-05-10",
+    "address": "404 Birch Boulevard, San Antonio, TX 78201",
+    "dateOfBirth": "1987-04-18",
+    "wishlistCount": 9,
+    "accountAge": "8 months"
+  },
+  {
+    "id": 8,
+    "name": "Jennifer Lee",
+    "email": "jennifer.l@example.com",
+    "phone": "+1 (555) 890-1234",
+    "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=200&auto=format&fit=crop&facepad=2",
+    "joinDate": "2022-12-01",
+    "address": "505 Walnut Way, San Diego, CA 92101",
+    "dateOfBirth": "1993-11-25",
+    "wishlistCount": 11,
+    "accountAge": "1 year 1 month"
+  },
+  {
+    "id": 9,
+    "name": "Thomas Anderson",
+    "email": "thomas.a@example.com",
+    "phone": "+1 (555) 901-2345",
+    "avatar": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&auto=format&fit=crop&facepad=2",
+    "joinDate": "2023-04-25",
+    "address": "606 Spruce Court, Dallas, TX 75201",
+    "dateOfBirth": "1989-02-14",
+    "wishlistCount": 6,
+    "accountAge": "9 months"
+  },
+  {
+    "id": 10,
+    "name": "Maria Garcia",
+    "email": "maria.g@example.com",
+    "phone": "+1 (555) 012-3456",
+    "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=200&auto=format&fit=crop&facepad=2",
+    "joinDate": "2023-07-30",
+    "address": "707 Ash Avenue, San Jose, CA 95101",
+    "dateOfBirth": "1994-06-08",
+    "wishlistCount": 4,
+    "accountAge": "6 months"
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "hero": {
+    "title": "Discover Amazing Products",
+    "subtitle": "Shop the latest trends in fashion, electronics, home goods and more",
+    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&auto=format&fit=crop"
+  },
+  "features": [
+    {
+      "title": "Free Shipping",
+      "description": "On orders over $50",
+      "icon": "truck"
+    },
+    {
+      "title": "Easy Returns",
+      "description": "30-day return policy",
+      "icon": "refresh-cw"
+    },
+    {
+      "title": "Secure Payment",
+      "description": "100% secure transactions",
+      "icon": "shield"
+    },
+    {
+      "title": "24/7 Support",
+      "description": "Dedicated customer support",
+      "icon": "headphones"
+    }
+  ]
+}

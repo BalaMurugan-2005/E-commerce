@@ -1,0 +1,21 @@
+/* Rating Stars Base Styles */
+.rating-stars {
+  display: flex;
+  align-items: center;
+}
+
+/* Star Styles */
+.full-star {
+  fill: #fbbf24;
+  color: #fbbf24;
+}
+
+.half-star {
+  fill: #fbbf24;
+  color: #fbbf24;
+}
+
+.empty-star {
+  color: #d1d5db;
+  fill: none;
+}

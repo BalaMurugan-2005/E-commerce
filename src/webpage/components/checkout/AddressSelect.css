@@ -1,0 +1,124 @@
+/* Address Select Base Styles */
+.address-select {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Header Section */
+.address-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.address-title {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+}
+
+/* Add New Address Button */
+.add-address-button {
+  display: flex;
+  align-items: center;
+  color: #2563eb;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.add-address-button:hover {
+  color: #1d4ed8;
+}
+
+.add-address-icon {
+  margin-right: 0.25rem;
+}
+
+/* Address Grid */
+.address-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .address-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Address Card */
+.address-card {
+  border: 2px solid;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  cursor: pointer;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.address-card:hover {
+  border-color: #3b82f6;
+}
+
+.address-card.selected {
+  border-color: #2563eb;
+  background-color: #eff6ff;
+}
+
+.address-card.unselected {
+  border-color: #e5e7eb;
+}
+
+/* Address Card Content */
+.address-card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* Address Details */
+.address-details {
+  flex: 1;
+}
+
+.address-name {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.address-text {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #4b5563;
+}
+
+.address-phone {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #4b5563;
+  margin-top: 0.5rem;
+}
+
+/* Selected Check Icon */
+.selected-check-icon {
+  color: #2563eb;
+  flex-shrink: 0;
+}
+
+/* Default Badge */
+.default-badge {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  background-color: #dbeafe;
+  color: #1e40af;
+  border-radius: 0.25rem;
+}

@@ -1,0 +1,158 @@
+[
+  {
+    "id": 1,
+    "type": "order",
+    "title": "Order Shipped",
+    "message": "Your order ORD-2024-001235 has been shipped. Tracking number: UPS987654321",
+    "timestamp": "2024-03-12T16:30:00Z",
+    "read": false,
+    "actions": [
+      {
+        "label": "Track Order",
+        "primary": true
+      },
+      {
+        "label": "View Details",
+        "primary": false
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "type": "promotion",
+    "title": "Flash Sale!",
+    "message": "Enjoy 30% off on all electronics. Sale ends in 24 hours.",
+    "timestamp": "2024-03-27T09:00:00Z",
+    "read": false,
+    "actions": [
+      {
+        "label": "Shop Now",
+        "primary": true
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "type": "review",
+    "title": "Review Request",
+    "message": "How was your experience with Wireless Bluetooth Headphones? Share your review.",
+    "timestamp": "2024-03-18T10:00:00Z",
+    "read": true,
+    "actions": [
+      {
+        "label": "Write Review",
+        "primary": true
+      },
+      {
+        "label": "Later",
+        "primary": false
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "type": "alert",
+    "title": "Price Drop Alert",
+    "message": "Smart Watch Series 5 price has dropped from $299.99 to $249.99",
+    "timestamp": "2024-03-25T14:30:00Z",
+    "read": false,
+    "actions": [
+      {
+        "label": "View Product",
+        "primary": true
+      },
+      {
+        "label": "Add to Cart",
+        "primary": false
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "type": "order",
+    "title": "Order Delivered",
+    "message": "Your order ORD-2024-001234 was delivered today at 2:20 PM",
+    "timestamp": "2024-03-17T14:20:00Z",
+    "read": true,
+    "actions": [
+      {
+        "label": "View Order",
+        "primary": true
+      },
+      {
+        "label": "Write Review",
+        "primary": false
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "type": "promotion",
+    "title": "Welcome Bonus",
+    "message": "Get 20% off your first order. Use code: WELCOME20",
+    "timestamp": "2024-03-01T08:00:00Z",
+    "read": true,
+    "actions": [
+      {
+        "label": "Shop Now",
+        "primary": true
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "type": "alert",
+    "title": "Back in Stock",
+    "message": "Premium Cotton T-Shirt in size M is back in stock",
+    "timestamp": "2024-03-22T11:45:00Z",
+    "read": false,
+    "actions": [
+      {
+        "label": "Buy Now",
+        "primary": true
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "type": "order",
+    "title": "Order Confirmed",
+    "message": "Your order ORD-2024-001236 has been confirmed and is being processed",
+    "timestamp": "2024-03-05T09:20:00Z",
+    "read": true,
+    "actions": [
+      {
+        "label": "Track Order",
+        "primary": true
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "type": "review",
+    "title": "Review Published",
+    "message": "Your review for Smart Watch Series 5 has been published. Thank you!",
+    "timestamp": "2024-03-22T15:20:00Z",
+    "read": true,
+    "actions": [
+      {
+        "label": "View Review",
+        "primary": true
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "type": "promotion",
+    "title": "Weekend Special",
+    "message": "Free shipping on all orders this weekend. No minimum required.",
+    "timestamp": "2024-03-29T00:00:00Z",
+    "read": false,
+    "actions": [
+      {
+        "label": "Start Shopping",
+        "primary": true
+      }
+    ]
+  }
+]

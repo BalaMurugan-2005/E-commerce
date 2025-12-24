@@ -1,0 +1,132 @@
+/* Cart Item Base Styles */
+.cart-item {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+}
+
+/* Product Image Link */
+.product-image-link {
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.product-image {
+  width: 6rem;
+  height: 6rem;
+  object-fit: cover;
+  border-radius: 0.375rem;
+}
+
+/* Product Details */
+.product-details {
+  flex: 1 1 0%;
+  margin-left: 1.5rem;
+}
+
+.product-name-link {
+  text-decoration: none;
+}
+
+.product-name {
+  font-weight: 500;
+  color: #1f2937;
+  transition: color 0.2s;
+}
+
+.product-name:hover {
+  color: #2563eb;
+}
+
+/* Actions Container */
+.actions-container {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Quantity Controls */
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+}
+
+.quantity-button {
+  padding: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantity-button:hover {
+  background-color: #f3f4f6;
+}
+
+.quantity-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.quantity-button:disabled:hover {
+  background-color: transparent;
+}
+
+.quantity-display {
+  padding: 0.5rem 1rem;
+  border-left: 1px solid #d1d5db;
+  border-right: 1px solid #d1d5db;
+  min-width: 3rem;
+  text-align: center;
+}
+
+/* Remove Button */
+.remove-button {
+  color: #dc2626;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.remove-button:hover {
+  color: #b91c1c;
+}
+
+/* Price Info */
+.price-info {
+  text-align: right;
+}
+
+.total-price {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.unit-price {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #6b7280;
+}

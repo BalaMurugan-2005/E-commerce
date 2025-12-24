@@ -1,0 +1,88 @@
+/* Cart Summary Base Styles */
+.cart-summary {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e5e7eb;
+}
+
+/* Summary Header */
+.summary-header {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.summary-icon {
+  margin-right: 0.5rem;
+}
+
+/* Summary Details */
+.summary-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.summary-label {
+  color: #4b5563;
+}
+
+.summary-value {
+  font-weight: 500;
+}
+
+/* Total Section */
+.total-section {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 0.75rem;
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+}
+
+/* Checkout Button */
+.checkout-button {
+  width: 100%;
+  background-color: #2563eb;
+  color: white;
+  padding: 0.75rem;
+  border-radius: 0.375rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+  margin-bottom: 0.75rem;
+}
+
+.checkout-button:hover {
+  background-color: #1d4ed8;
+}
+
+/* Continue Shopping Link */
+.continue-shopping-link {
+  display: block;
+  text-align: center;
+  color: #2563eb;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.continue-shopping-link:hover {
+  color: #1d4ed8;
+}

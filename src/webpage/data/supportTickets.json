@@ -1,0 +1,154 @@
+[
+  {
+    "id": 1,
+    "ticketNumber": "TKT-2024-0001",
+    "subject": "Order not delivered",
+    "category": "shipping",
+    "priority": "high",
+    "status": "open",
+    "message": "My order ORD-2024-001235 was supposed to be delivered yesterday but still shows in transit. Can you check what's happening?",
+    "createdAt": "2024-03-19T10:30:00Z",
+    "updatedAt": "2024-03-19T10:30:00Z",
+    "agent": {
+      "id": 101,
+      "name": "Alex Johnson",
+      "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&auto=format&fit=crop&facepad=2"
+    }
+  },
+  {
+    "id": 2,
+    "ticketNumber": "TKT-2024-0002",
+    "subject": "Defective product",
+    "category": "return",
+    "priority": "medium",
+    "status": "pending",
+    "message": "The Bluetooth headphones I received have a buzzing sound in the right ear. I'd like to request a replacement or refund.",
+    "createdAt": "2024-03-18T14:20:00Z",
+    "updatedAt": "2024-03-19T09:15:00Z",
+    "agent": {
+      "id": 102,
+      "name": "Sarah Miller",
+      "avatar": "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&auto=format&fit=crop&facepad=2"
+    }
+  },
+  {
+    "id": 3,
+    "ticketNumber": "TKT-2024-0003",
+    "subject": "Wrong size received",
+    "category": "order",
+    "priority": "medium",
+    "status": "resolved",
+    "message": "I ordered size M t-shirt but received size L. How can I exchange this for the correct size?",
+    "createdAt": "2024-03-16T11:45:00Z",
+    "updatedAt": "2024-03-17T16:30:00Z",
+    "agent": {
+      "id": 103,
+      "name": "Michael Chen",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&facepad=2"
+    }
+  },
+  {
+    "id": 4,
+    "ticketNumber": "TKT-2024-0004",
+    "subject": "Payment issue",
+    "category": "payment",
+    "priority": "high",
+    "status": "open",
+    "message": "My payment was declined but the amount was deducted from my account. Please help resolve this issue.",
+    "createdAt": "2024-03-20T09:15:00Z",
+    "updatedAt": "2024-03-20T09:15:00Z",
+    "agent": null
+  },
+  {
+    "id": 5,
+    "ticketNumber": "TKT-2024-0005",
+    "subject": "Return status",
+    "category": "return",
+    "priority": "low",
+    "status": "closed",
+    "message": "I returned a product 2 weeks ago. When will I receive my refund?",
+    "createdAt": "2024-03-10T16:40:00Z",
+    "updatedAt": "2024-03-12T14:20:00Z",
+    "agent": {
+      "id": 101,
+      "name": "Alex Johnson",
+      "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&auto=format&fit=crop&facepad=2"
+    }
+  },
+  {
+    "id": 6,
+    "ticketNumber": "TKT-2024-0006",
+    "subject": "Coupon not working",
+    "category": "general",
+    "priority": "medium",
+    "status": "resolved",
+    "message": "Tried to apply WELCOME20 coupon but it says invalid. I'm a new customer, can you help?",
+    "createdAt": "2024-03-15T13:25:00Z",
+    "updatedAt": "2024-03-15T15:10:00Z",
+    "agent": {
+      "id": 104,
+      "name": "Emily Davis",
+      "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&auto=format&fit=crop&facepad=2"
+    }
+  },
+  {
+    "id": 7,
+    "ticketNumber": "TKT-2024-0007",
+    "subject": "Account access",
+    "category": "account",
+    "priority": "medium",
+    "status": "pending",
+    "message": "Can't log into my account. Reset password email not arriving.",
+    "createdAt": "2024-03-19T08:45:00Z",
+    "updatedAt": "2024-03-19T10:30:00Z",
+    "agent": {
+      "id": 102,
+      "name": "Sarah Miller",
+      "avatar": "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&auto=format&fit=crop&facepad=2"
+    }
+  },
+  {
+    "id": 8,
+    "ticketNumber": "TKT-2024-0008",
+    "subject": "Product question",
+    "category": "general",
+    "priority": "low",
+    "status": "closed",
+    "message": "Is the yoga mat suitable for hot yoga? What's the maximum temperature it can handle?",
+    "createdAt": "2024-03-14T17:20:00Z",
+    "updatedAt": "2024-03-14T18:05:00Z",
+    "agent": {
+      "id": 103,
+      "name": "Michael Chen",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&facepad=2"
+    }
+  },
+  {
+    "id": 9,
+    "ticketNumber": "TKT-2024-0009",
+    "subject": "Bulk order inquiry",
+    "category": "order",
+    "priority": "medium",
+    "status": "open",
+    "message": "I want to order 50 t-shirts for my company. Do you offer bulk discounts?",
+    "createdAt": "2024-03-21T11:30:00Z",
+    "updatedAt": "2024-03-21T11:30:00Z",
+    "agent": null
+  },
+  {
+    "id": 10,
+    "ticketNumber": "TKT-2024-0010",
+    "subject": "Warranty claim",
+    "category": "general",
+    "priority": "medium",
+    "status": "pending",
+    "message": "My smart watch stopped working after 3 months. It should be under warranty. How do I claim?",
+    "createdAt": "2024-03-18T15:45:00Z",
+    "updatedAt": "2024-03-19T09:00:00Z",
+    "agent": {
+      "id": 104,
+      "name": "Emily Davis",
+      "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&auto=format&fit=crop&facepad=2"
+    }
+  }
+]

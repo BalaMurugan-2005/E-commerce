@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "name": "SoundWave",
+    "description": "Premium audio equipment manufacturer known for exceptional sound quality and innovative technology.",
+    "logo": "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w-200&auto=format&fit=crop",
+    "establishedYear": 2010,
+    "rating": 4.7,
+    "reviewCount": 2345,
+    "features": ["Premium Quality", "2-Year Warranty", "Free Shipping"],
+    "story": "Founded in 2010, SoundWave revolutionized the audio industry with its commitment to delivering crystal-clear sound experiences. From humble beginnings in a garage to becoming a global leader, we continue to innovate and push the boundaries of audio technology."
+  },
+  {
+    "id": 2,
+    "name": "TechFit",
+    "description": "Innovative wearable technology company focusing on health and fitness tracking devices.",
+    "logo": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w-200&auto=format&fit=crop",
+    "establishedYear": 2015,
+    "rating": 4.6,
+    "reviewCount": 1892,
+    "features": ["Health Tracking", "Waterproof", "Long Battery"],
+    "story": "TechFit was born from a simple idea: make health tracking accessible to everyone. Our journey started with a basic step counter and has evolved into comprehensive wellness ecosystems that millions trust every day."
+  },
+  {
+    "id": 3,
+    "name": "UrbanStyle",
+    "description": "Contemporary fashion brand offering sustainable and comfortable clothing for modern lifestyles.",
+    "logo": "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w-200&auto=format&fit=crop",
+    "establishedYear": 2012,
+    "rating": 4.4,
+    "reviewCount": 3124,
+    "features": ["Sustainable Materials", "Ethical Production", "Modern Designs"],
+    "story": "UrbanStyle began with a mission to create fashion that doesn't compromise on ethics or style. We believe in sustainable practices, fair wages, and creating timeless pieces that last beyond seasons."
+  },
+  {
+    "id": 4,
+    "name": "HomeEssentials",
+    "description": "Premium home and kitchenware brand combining functionality with elegant design.",
+    "logo": "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w-200&auto=format&fit=crop",
+    "establishedYear": 2008,
+    "rating": 4.5,
+    "reviewCount": 1678,
+    "features": ["Durable Materials", "Easy Clean", "Modern Design"],
+    "story": "For over 15 years, HomeEssentials has been transforming houses into homes. Our passion for quality craftsmanship and thoughtful design has made us a trusted name in households worldwide."
+  },
+  {
+    "id": 5,
+    "name": "GameCore",
+    "description": "High-performance gaming hardware and accessories for professional and casual gamers.",
+    "logo": "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w-200&auto=format&fit=crop",
+    "establishedYear": 2018,
+    "rating": 4.8,
+    "reviewCount": 2987,
+    "features": ["High Performance", "Customizable", "Cooling Tech"],
+    "story": "GameCore started when a group of passionate gamers couldn't find the perfect hardware. We build every product with one goal in mind: to give gamers the competitive edge they deserve."
+  },
+  {
+    "id": 6,
+    "name": "ActiveLife",
+    "description": "Fitness equipment and sportswear brand promoting healthy and active lifestyles.",
+    "logo": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w-200&auto=format&fit=crop",
+    "establishedYear": 2014,
+    "rating": 4.3,
+    "reviewCount": 1432,
+    "features": ["Eco-Friendly", "Non-Slip", "Durable"],
+    "story": "ActiveLife believes that fitness should be accessible, enjoyable, and sustainable. From yoga mats to home gym equipment, we're here to support every step of your fitness journey."
+  },
+  {
+    "id": 7,
+    "name": "BrightWorks",
+    "description": "Innovative lighting solutions for home, office, and commercial spaces.",
+    "logo": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w-200&auto=format&fit=crop",
+    "establishedYear": 2016,
+    "rating": 4.2,
+    "reviewCount": 987,
+    "features": ["Energy Efficient", "Smart Control", "Modern Design"],
+    "story": "BrightWorks illuminates lives with innovative lighting solutions. We combine cutting-edge technology with elegant design to create lighting that transforms spaces and enhances moods."
+  },
+  {
+    "id": 8,
+    "name": "LeatherCraft",
+    "description": "Artisanal leather goods handmade with premium materials and traditional techniques.",
+    "logo": "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w-200&auto=format&fit=crop",
+    "establishedYear": 2005,
+    "rating": 4.7,
+    "reviewCount": 876,
+    "features": ["Genuine Leather", "Handmade", "Lifetime Warranty"],
+    "story": "For nearly two decades, LeatherCraft has been preserving the art of traditional leatherworking. Each piece tells a story of craftsmanship, quality, and timeless style."
+  },
+  {
+    "id": 9,
+    "name": "RunPro",
+    "description": "Professional athletic footwear engineered for performance and comfort.",
+    "logo": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w-200&auto=format&fit=crop",
+    "establishedYear": 2013,
+    "rating": 4.6,
+    "reviewCount": 2310,
+    "features": ["Shock Absorption", "Breathable", "Lightweight"],
+    "story": "RunPro was founded by marathon runners who understood the science behind perfect strides. We engineer every shoe with precision to help athletes achieve their personal best."
+  },
+  {
+    "id": 10,
+    "name": "PureGlow",
+    "description": "Clean beauty brand offering natural skincare and cosmetic products.",
+    "logo": "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w-200&auto=format&fit=crop",
+    "establishedYear": 2019,
+    "rating": 4.5,
+    "reviewCount": 1567,
+    "features": ["Natural Ingredients", "Cruelty-Free", "Vegan"],
+    "story": "PureGlow believes in beauty that's good for you and the planet. We create clean, effective skincare using nature's best ingredients, backed by science."
+  }
+]

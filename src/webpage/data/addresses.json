@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "name": "John Smith",
+    "street": "123 Main Street",
+    "city": "New York",
+    "state": "NY",
+    "zipCode": "10001",
+    "country": "United States",
+    "phone": "+1 (555) 123-4567",
+    "isDefault": true
+  },
+  {
+    "id": 2,
+    "name": "John Smith",
+    "street": "456 Oak Avenue",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zipCode": "90001",
+    "country": "United States",
+    "phone": "+1 (555) 123-4567",
+    "isDefault": false
+  },
+  {
+    "id": 3,
+    "name": "John Smith",
+    "street": "789 Pine Road",
+    "city": "Chicago",
+    "state": "IL",
+    "zipCode": "60601",
+    "country": "United States",
+    "phone": "+1 (555) 123-4567",
+    "isDefault": false
+  },
+  {
+    "id": 4,
+    "name": "John Smith",
+    "street": "101 Maple Lane",
+    "city": "Houston",
+    "state": "TX",
+    "zipCode": "77001",
+    "country": "United States",
+    "phone": "+1 (555) 123-4567",
+    "isDefault": false
+  },
+  {
+    "id": 5,
+    "name": "John Smith",
+    "street": "202 Cedar Street",
+    "city": "Phoenix",
+    "state": "AZ",
+    "zipCode": "85001",
+    "country": "United States",
+    "phone": "+1 (555) 123-4567",
+    "isDefault": false
+  },
+  {
+    "id": 6,
+    "name": "John Smith",
+    "street": "303 Elm Drive",
+    "city": "Philadelphia",
+    "state": "PA",
+    "zipCode": "19101",
+    "country": "United States",
+    "phone": "+1 (555) 123-4567",
+    "isDefault": false
+  },
+  {
+    "id": 7,
+    "name": "John Smith",
+    "street": "404 Birch Boulevard",
+    "city": "San Antonio",
+    "state": "TX",
+    "zipCode": "78201",
+    "country": "United States",
+    "phone": "+1 (555) 123-4567",
+    "isDefault": false
+  },
+  {
+    "id": 8,
+    "name": "John Smith",
+    "street": "505 Walnut Way",
+    "city": "San Diego",
+    "state": "CA",
+    "zipCode": "92101",
+    "country": "United States",
+    "phone": "+1 (555) 123-4567",
+    "isDefault": false
+  },
+  {
+    "id": 9,
+    "name": "John Smith",
+    "street": "606 Spruce Court",
+    "city": "Dallas",
+    "state": "TX",
+    "zipCode": "75201",
+    "country": "United States",
+    "phone": "+1 (555) 123-4567",
+    "isDefault": false
+  },
+  {
+    "id": 10,
+    "name": "John Smith",
+    "street": "707 Ash Avenue",
+    "city": "San Jose",
+    "state": "CA",
+    "zipCode": "95101",
+    "country": "United States",
+    "phone": "+1 (555) 123-4567",
+    "isDefault": false
+  }
+]

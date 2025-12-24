@@ -1,0 +1,230 @@
+[
+  {
+    "id": 1,
+    "name": "Wireless Bluetooth Headphones",
+    "description": "Premium noise-cancelling headphones with 30-hour battery life and superior sound quality.",
+    "price": 129.99,
+    "discountPrice": 99.99,
+    "categoryId": 1,
+    "brandId": 1,
+    "rating": 4.5,
+    "reviewCount": 128,
+    "stock": 45,
+    "images": [
+      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1484704849700-f032a568e944?w-800&auto=format&fit=crop"
+    ],
+    "sizes": ["One Size"],
+    "colors": [
+      {"name": "Black", "code": "#000000"},
+      {"name": "White", "code": "#FFFFFF"},
+      {"name": "Blue", "code": "#2563EB"}
+    ],
+    "createdAt": "2024-01-15",
+    "popularity": 95
+  },
+  {
+    "id": 2,
+    "name": "Smart Watch Series 5",
+    "description": "Fitness tracker with heart rate monitor, GPS, and sleep tracking capabilities.",
+    "price": 299.99,
+    "discountPrice": 249.99,
+    "categoryId": 2,
+    "brandId": 2,
+    "rating": 4.7,
+    "reviewCount": 256,
+    "stock": 32,
+    "images": [
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&auto=format&fit=crop"
+    ],
+    "sizes": ["38mm", "42mm", "46mm"],
+    "colors": [
+      {"name": "Midnight Black", "code": "#111827"},
+      {"name": "Silver", "code": "#D1D5DB"},
+      {"name": "Rose Gold", "code": "#F472B6"}
+    ],
+    "createdAt": "2024-02-10",
+    "popularity": 92
+  },
+  {
+    "id": 3,
+    "name": "Premium Cotton T-Shirt",
+    "description": "100% organic cotton t-shirt with premium stitching and comfortable fit.",
+    "price": 29.99,
+    "discountPrice": 24.99,
+    "categoryId": 3,
+    "brandId": 3,
+    "rating": 4.3,
+    "reviewCount": 89,
+    "stock": 120,
+    "images": [
+      "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&auto=format&fit=crop"
+    ],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "colors": [
+      {"name": "White", "code": "#FFFFFF"},
+      {"name": "Black", "code": "#000000"},
+      {"name": "Navy Blue", "code": "#1E3A8A"},
+      {"name": "Forest Green", "code": "#166534"}
+    ],
+    "createdAt": "2024-03-05",
+    "popularity": 87
+  },
+  {
+    "id": 4,
+    "name": "Ceramic Coffee Mug Set",
+    "description": "Set of 4 ceramic mugs with ergonomic handles and microwave safe design.",
+    "price": 34.99,
+    "discountPrice": null,
+    "categoryId": 4,
+    "brandId": 4,
+    "rating": 4.6,
+    "reviewCount": 67,
+    "stock": 78,
+    "images": [
+      "https://images.unsplash.com/photo-1514228742587-6b1558fcf93a?w=800&auto=format&fit=crop"
+    ],
+    "sizes": ["One Size"],
+    "colors": [
+      {"name": "White", "code": "#FFFFFF"},
+      {"name": "Cream", "code": "#FEF3C7"}
+    ],
+    "createdAt": "2024-01-20",
+    "popularity": 82
+  },
+  {
+    "id": 5,
+    "name": "Gaming Laptop Pro",
+    "description": "High-performance gaming laptop with RTX 4070 and 32GB RAM for ultimate gaming experience.",
+    "price": 1899.99,
+    "discountPrice": 1699.99,
+    "categoryId": 5,
+    "brandId": 5,
+    "rating": 4.8,
+    "reviewCount": 312,
+    "stock": 15,
+    "images": [
+      "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=800&auto=format&fit=crop"
+    ],
+    "sizes": ["15.6-inch", "17.3-inch"],
+    "colors": [
+      {"name": "Black", "code": "#000000"},
+      {"name": "Gray", "code": "#6B7280"}
+    ],
+    "createdAt": "2024-02-28",
+    "popularity": 98
+  },
+  {
+    "id": 6,
+    "name": "Yoga Mat Premium",
+    "description": "Eco-friendly non-slip yoga mat with carrying strap and alignment markers.",
+    "price": 49.99,
+    "discountPrice": 39.99,
+    "categoryId": 6,
+    "brandId": 6,
+    "rating": 4.4,
+    "reviewCount": 143,
+    "stock": 56,
+    "images": [
+      "https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=800&auto=format&fit=crop"
+    ],
+    "sizes": ["Standard", "Extra Long"],
+    "colors": [
+      {"name": "Purple", "code": "#7C3AED"},
+      {"name": "Blue", "code": "#3B82F6"},
+      {"name": "Green", "code": "#10B981"}
+    ],
+    "createdAt": "2024-03-15",
+    "popularity": 85
+  },
+  {
+    "id": 7,
+    "name": "LED Desk Lamp",
+    "description": "Adjustable LED desk lamp with 5 brightness levels and USB charging port.",
+    "price": 39.99,
+    "discountPrice": 29.99,
+    "categoryId": 7,
+    "brandId": 7,
+    "rating": 4.2,
+    "reviewCount": 91,
+    "stock": 89,
+    "images": [
+      "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800&auto=format&fit=crop"
+    ],
+    "sizes": ["Standard"],
+    "colors": [
+      {"name": "White", "code": "#FFFFFF"},
+      {"name": "Black", "code": "#000000"}
+    ],
+    "createdAt": "2024-02-14",
+    "popularity": 79
+  },
+  {
+    "id": 8,
+    "name": "Leather Wallet",
+    "description": "Genuine leather wallet with multiple card slots and RFID protection.",
+    "price": 59.99,
+    "discountPrice": 44.99,
+    "categoryId": 8,
+    "brandId": 8,
+    "rating": 4.5,
+    "reviewCount": 78,
+    "stock": 42,
+    "images": [
+      "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=800&auto=format&fit=crop"
+    ],
+    "sizes": ["Standard"],
+    "colors": [
+      {"name": "Brown", "code": "#92400E"},
+      {"name": "Black", "code": "#000000"}
+    ],
+    "createdAt": "2024-01-30",
+    "popularity": 83
+  },
+  {
+    "id": 9,
+    "name": "Bluetooth Speaker",
+    "description": "Portable waterproof Bluetooth speaker with 360° sound and 12-hour battery.",
+    "price": 79.99,
+    "discountPrice": 64.99,
+    "categoryId": 1,
+    "brandId": 1,
+    "rating": 4.6,
+    "reviewCount": 201,
+    "stock": 63,
+    "images": [
+      "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=800&auto=format&fit=crop"
+    ],
+    "sizes": ["Portable"],
+    "colors": [
+      {"name": "Red", "code": "#DC2626"},
+      {"name": "Blue", "code": "#2563EB"},
+      {"name": "Black", "code": "#000000"}
+    ],
+    "createdAt": "2024-03-01",
+    "popularity": 91
+  },
+  {
+    "id": 10,
+    "name": "Running Shoes",
+    "description": "Lightweight running shoes with breathable mesh and cushioned sole for maximum comfort.",
+    "price": 89.99,
+    "discountPrice": 74.99,
+    "categoryId": 9,
+    "brandId": 9,
+    "rating": 4.7,
+    "reviewCount": 167,
+    "stock": 54,
+    "images": [
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&auto=format&fit=crop"
+    ],
+    "sizes": ["7", "8", "9", "10", "11", "12"],
+    "colors": [
+      {"name": "Black/Red", "code": "#000000"},
+      {"name": "White/Blue", "code": "#FFFFFF"},
+      {"name": "Gray/Orange", "code": "#6B7280"}
+    ],
+    "createdAt": "2024-02-22",
+    "popularity": 94
+  }
+]

@@ -1,0 +1,34 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "productId": 2,
+      "addedDate": "2024-03-20",
+      "note": "For birthday gift"
+    },
+    {
+      "id": 2,
+      "productId": 5,
+      "addedDate": "2024-03-18",
+      "note": "Save for Black Friday"
+    },
+    {
+      "id": 3,
+      "productId": 7,
+      "addedDate": "2024-03-15",
+      "note": "Need for home office"
+    },
+    {
+      "id": 4,
+      "productId": 8,
+      "addedDate": "2024-03-12",
+      "note": "Replace old wallet"
+    },
+    {
+      "id": 5,
+      "productId": 10,
+      "addedDate": "2024-03-10",
+      "note": "New running shoes"
+    }
+  ]
+}

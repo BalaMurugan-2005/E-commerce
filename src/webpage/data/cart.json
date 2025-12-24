@@ -1,0 +1,52 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "productId": 1,
+      "name": "Wireless Bluetooth Headphones",
+      "price": 99.99,
+      "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&auto=format&fit=crop",
+      "quantity": 1,
+      "stock": 45,
+      "selectedSize": "One Size",
+      "selectedColor": "Black"
+    },
+    {
+      "id": 2,
+      "productId": 3,
+      "name": "Premium Cotton T-Shirt",
+      "price": 24.99,
+      "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&auto=format&fit=crop",
+      "quantity": 2,
+      "stock": 120,
+      "selectedSize": "M",
+      "selectedColor": "Navy Blue"
+    },
+    {
+      "id": 3,
+      "productId": 6,
+      "name": "Yoga Mat Premium",
+      "price": 39.99,
+      "image": "https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=400&auto=format&fit=crop",
+      "quantity": 1,
+      "stock": 56,
+      "selectedSize": "Standard",
+      "selectedColor": "Purple"
+    },
+    {
+      "id": 4,
+      "productId": 9,
+      "name": "Bluetooth Speaker",
+      "price": 64.99,
+      "image": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&auto=format&fit=crop",
+      "quantity": 1,
+      "stock": 63,
+      "selectedSize": "Portable",
+      "selectedColor": "Blue"
+    }
+  ],
+  "subtotal": 274.95,
+  "shipping": 5.99,
+  "tax": 22.00,
+  "total": 302.94
+}

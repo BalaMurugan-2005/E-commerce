@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Electronics",
+    "description": "Latest gadgets and electronic devices",
+    "icon": "https://images.unsplash.com/photo-1498049794561-7780e7231661?w=200&auto=format&fit=crop",
+    "productCount": 45
+  },
+  {
+    "id": 2,
+    "name": "Wearables",
+    "description": "Smart watches and fitness trackers",
+    "icon": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=200&auto=format&fit=crop",
+    "productCount": 28
+  },
+  {
+    "id": 3,
+    "name": "Fashion",
+    "description": "Clothing and accessories",
+    "icon": "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=200&auto=format&fit=crop",
+    "productCount": 156
+  },
+  {
+    "id": 4,
+    "name": "Home & Kitchen",
+    "description": "Home decor and kitchen essentials",
+    "icon": "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=200&auto=format&fit=crop",
+    "productCount": 89
+  },
+  {
+    "id": 5,
+    "name": "Computers",
+    "description": "Laptops, desktops, and accessories",
+    "icon": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=200&auto=format&fit=crop",
+    "productCount": 32
+  },
+  {
+    "id": 6,
+    "name": "Fitness",
+    "description": "Sports equipment and workout gear",
+    "icon": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&auto=format&fit=crop",
+    "productCount": 67
+  },
+  {
+    "id": 7,
+    "name": "Home Office",
+    "description": "Office furniture and supplies",
+    "icon": "https://images.unsplash.com/photo-1585634917202-6f03b28fc6d0?w=200&auto=format&fit=crop",
+    "productCount": 41
+  },
+  {
+    "id": 8,
+    "name": "Accessories",
+    "description": "Bags, wallets, and personal items",
+    "icon": "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=200&auto=format&fit=crop",
+    "productCount": 73
+  },
+  {
+    "id": 9,
+    "name": "Footwear",
+    "description": "Shoes and sneakers",
+    "icon": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=200&auto=format&fit=crop",
+    "productCount": 52
+  },
+  {
+    "id": 10,
+    "name": "Beauty",
+    "description": "Skincare and cosmetics",
+    "icon": "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=200&auto=format&fit=crop",
+    "productCount": 64
+  }
+]
