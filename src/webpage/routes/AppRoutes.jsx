@@ -17,6 +17,9 @@ import Addresses from '../../customer/Addresses'
 import Notifications from '../pages/Notifications'
 import Support from '../pages/Support'
 import Review from '../pages/Review'
+import Register from '../pages/Register'
+import Login from '../pages/Login'
+
 
 const AppRoutes = () => {
   return (
@@ -26,6 +29,8 @@ const AppRoutes = () => {
       <Route path="/product/:id" element={<ProductDetail />} />
       <Route path="/category/:id" element={<Category />} />
       <Route path="/brand/:id" element={<Brand />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/login" element={<Login />} />
       <Route path="/search" element={<Search />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/wishlist" element={<Wishlist />} />
