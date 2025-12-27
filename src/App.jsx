@@ -1,19 +1,15 @@
+
 import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import AppRoutes from './webpage/routes/AppRoutes'
-import Header from './webpage/components/common/Header'
-import Footer from './webpage/components/common/Footer'
 import './App.css';
 
 function App() {
   return (
     <Router>
       <div className="App min-h-screen flex flex-col">
-        <Header />
-        <main className="flex-1">
-          <AppRoutes />
-        </main>
-        <Footer />
+        {/* Header and Footer are now handled within AppRoutes */}
+        <AppRoutes />
       </div>
     </Router>
   )

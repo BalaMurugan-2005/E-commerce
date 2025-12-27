@@ -1,5 +1,6 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
+import Layout from '../components/common/Layout'
 import Home from '../pages/Home'
 import ProductList from '../pages/ProductList'
 import ProductDetail from '../pages/ProductDetail'
@@ -20,29 +21,115 @@ import Review from '../pages/Review'
 import Register from '../pages/Register'
 import Login from '../pages/Login'
 
-
 const AppRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/products" element={<ProductList />} />
-      <Route path="/product/:id" element={<ProductDetail />} />
-      <Route path="/category/:id" element={<Category />} />
-      <Route path="/brand/:id" element={<Brand />} />
+      {/* Routes WITH Header & Footer */}
+      <Route path="/" element={
+        <Layout>
+          <Home />
+        </Layout>
+      } />
+      
+      <Route path="/products" element={
+        <Layout>
+          <ProductList />
+        </Layout>
+      } />
+      
+      <Route path="/product/:id" element={
+        <Layout>
+          <ProductDetail />
+        </Layout>
+      } />
+      
+      <Route path="/category/:id" element={
+        <Layout>
+          <Category />
+        </Layout>
+      } />
+      
+      <Route path="/brand/:id" element={
+        <Layout>
+          <Brand />
+        </Layout>
+      } />
+      
+      <Route path="/search" element={
+        <Layout>
+          <Search />
+        </Layout>
+      } />
+      
+      <Route path="/cart" element={
+        <Layout>
+          <Cart />
+        </Layout>
+      } />
+      
+      <Route path="/wishlist" element={
+        <Layout>
+          <Wishlist />
+        </Layout>
+      } />
+      
+      <Route path="/checkout" element={
+        <Layout>
+          <Checkout />
+        </Layout>
+      } />
+      
+      <Route path="/orders" element={
+        <Layout>
+          <Orders />
+        </Layout>
+      } />
+      
+      <Route path="/orders/:id" element={
+        <Layout>
+          <OrderDetails />
+        </Layout>
+      } />
+      
+      <Route path="/track-order" element={
+        <Layout>
+          <TrackOrder />
+        </Layout>
+      } />
+      
+      <Route path="/profile" element={
+        <Layout>
+          <Profile />
+        </Layout>
+      } />
+      
+      <Route path="/addresses" element={
+        <Layout>
+          <Addresses />
+        </Layout>
+      } />
+      
+      <Route path="/notifications" element={
+        <Layout>
+          <Notifications />
+        </Layout>
+      } />
+      
+      <Route path="/support" element={
+        <Layout>
+          <Support />
+        </Layout>
+      } />
+      
+      <Route path="/review/:productId" element={
+        <Layout>
+          <Review />
+        </Layout>
+      } />
+      
+      {/* Routes WITHOUT Header & Footer */}
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/search" element={<Search />} />
-      <Route path="/cart" element={<Cart />} />
-      <Route path="/wishlist" element={<Wishlist />} />
-      <Route path="/checkout" element={<Checkout />} />
-      <Route path="/orders" element={<Orders />} />
-      <Route path="/orders/:id" element={<OrderDetails />} />
-      <Route path="/track-order" element={<TrackOrder />} />
-      <Route path="/profile" element={<Profile />} />
-      <Route path="/addresses" element={<Addresses />} />
-      <Route path="/notifications" element={<Notifications />} />
-      <Route path="/support" element={<Support />} />
-      <Route path="/review/:productId" element={<Review />} />
     </Routes>
   )
 }

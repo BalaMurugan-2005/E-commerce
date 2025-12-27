@@ -1,16 +1,18 @@
-// animations.js
-let anime;
+let animePromise = null;
 
-// Dynamic import to avoid SSR issues
-if (typeof window !== 'undefined') {
-  import('animejs').then(module => {
-    anime = module.default;
-  });
-}
+const loadAnime = () => {
+  if (typeof window === 'undefined') return Promise.resolve(null);
 
-export const heroAnimation = () => {
-  if (!anime || typeof window === 'undefined') return;
-  
+  if (!animePromise) {
+    animePromise = import('animejs').then(m => m.default);
+  }
+  return animePromise;
+};
+
+export const heroAnimation = async () => {
+  const anime = await loadAnime();
+  if (!anime) return;
+
   anime({
     targets: '.hero-title span',
     translateY: [30, 0],
@@ -30,18 +32,19 @@ export const heroAnimation = () => {
   });
 
   anime({
-    targets: '.hero-buttons button',
+    targets: '.hero-buttons a',
     translateY: [30, 0],
     opacity: [0, 1],
     duration: 1000,
-    delay: anime.stagger(200, {start: 1200}),
+    delay: anime.stagger(200, { start: 1200 }),
     easing: 'easeOutExpo'
   });
 };
 
-export const featureCardsAnimation = () => {
-  if (!anime || typeof window === 'undefined') return;
-  
+export const featureCardsAnimation = async () => {
+  const anime = await loadAnime();
+  if (!anime) return;
+
   anime({
     targets: '.feature-card',
     translateY: [50, 0],
@@ -52,73 +55,61 @@ export const featureCardsAnimation = () => {
   });
 };
 
-export const categoryFlipAnimation = () => {
-  if (typeof window === 'undefined') return;
-  
-  const cards = document.querySelectorAll('.category-card');
-  
-  cards.forEach(card => {
+export const categoryFlipAnimation = async () => {
+  const anime = await loadAnime();
+  if (!anime) return;
+
+  document.querySelectorAll('.category-card').forEach(card => {
+    if (card.dataset.bound) return;
+    card.dataset.bound = 'true';
+
+    const inner = card.querySelector('.category-inner');
+    if (!inner) return;
+
     card.addEventListener('mouseenter', () => {
-      if (!anime) return;
-      anime({
-        targets: card.querySelector('.category-inner'),
-        rotateY: 180,
-        duration: 600,
-        easing: 'easeInOutSine'
-      });
+      anime({ targets: inner, rotateY: 180, duration: 600, easing: 'easeInOutSine' });
     });
-    
+
     card.addEventListener('mouseleave', () => {
-      if (!anime) return;
-      anime({
-        targets: card.querySelector('.category-inner'),
-        rotateY: 0,
-        duration: 600,
-        easing: 'easeInOutSine'
-      });
+      anime({ targets: inner, rotateY: 0, duration: 600, easing: 'easeInOutSine' });
     });
   });
 };
 
-export const productCardAnimations = () => {
-  if (!anime || typeof window === 'undefined') return;
-  
+export const productCardAnimations = async () => {
+  const anime = await loadAnime();
+  if (!anime) return;
+
   anime({
     targets: '.product-card',
     translateY: [60, 0],
     opacity: [0, 1],
     duration: 1200,
-    delay: anime.stagger(100, {start: 500}),
+    delay: anime.stagger(100, { start: 500 }),
     easing: 'easeOutExpo'
   });
 };
 
 export const floatingParticles = () => {
   if (typeof window === 'undefined') return;
-  
-  const particlesContainer = document.querySelector('.particles');
-  if (!particlesContainer) return;
 
-  // Clear existing particles
-  particlesContainer.innerHTML = '';
+  const container = document.querySelector('.particles-background');
+  if (!container) return;
+
+  container.innerHTML = '';
 
   for (let i = 0; i < 15; i++) {
-    const particle = document.createElement('div');
-    particle.className = 'particle';
-    
-    // Random properties
+    const p = document.createElement('div');
+    p.className = 'particle';
+
     const size = Math.random() * 60 + 10;
-    const posX = Math.random() * 100;
-    const posY = Math.random() * 100;
-    const delay = Math.random() * 5;
-    
-    particle.style.width = `${size}px`;
-    particle.style.height = `${size}px`;
-    particle.style.left = `${posX}%`;
-    particle.style.top = `${posY}%`;
-    particle.style.opacity = Math.random() * 0.3 + 0.1;
-    particle.style.animationDelay = `${delay}s`;
-    
-    particlesContainer.appendChild(particle);
+    p.style.width = `${size}px`;
+    p.style.height = `${size}px`;
+    p.style.left = `${Math.random() * 100}%`;
+    p.style.top = `${Math.random() * 100}%`;
+    p.style.opacity = Math.random() * 0.3 + 0.1;
+    p.style.animationDelay = `${Math.random() * 5}s`;
+
+    container.appendChild(p);
   }
 };

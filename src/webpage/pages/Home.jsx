@@ -16,24 +16,25 @@ const Home = () => {
   const [loading, setLoading] = useState(true)
   const heroRef = useRef(null)
 
-  useEffect(() => {
-    // Simulate API call with better loading animation
-    setTimeout(() => {
-      setFeaturedProducts(productsData.slice(0, 8))
-      setNewArrivals(productsData.slice(8, 16))
-      setBestSellers(productsData.slice(16, 24))
-      setLoading(false)
-      
-      // Initialize animations after loading
-      setTimeout(() => {
-        heroAnimation()
-        featureCardsAnimation()
-        categoryFlipAnimation()
-        productCardAnimations()
-        floatingParticles()
-      }, 300)
-    }, 1500)
-  }, [])
+useEffect(() => {
+  setTimeout(() => {
+    setFeaturedProducts(productsData.slice(0, 8))
+    setNewArrivals(productsData.slice(8, 16))
+    setBestSellers(productsData.slice(16, 24))
+    setLoading(false)
+  }, 1500)
+}, [])
+
+useEffect(() => {
+  if (!loading) {
+    heroAnimation()
+    featureCardsAnimation()
+    categoryFlipAnimation()
+    productCardAnimations()
+    floatingParticles()
+  }
+}, [loading])
+ 
 
   const addToCart = (product, event) => {
     // Add ripple effect
