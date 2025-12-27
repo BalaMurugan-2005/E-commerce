@@ -20,6 +20,7 @@ import Support from '../pages/Support'
 import Review from '../pages/Review'
 import Register from '../pages/Register'
 import Login from '../pages/Login'
+import OtherUsers from '../pages/OtherUsers'
 
 const AppRoutes = () => {
   return (
@@ -124,6 +125,13 @@ const AppRoutes = () => {
       <Route path="/review/:productId" element={
         <Layout>
           <Review />
+        </Layout>
+      } />
+      
+      {/* Add OtherUsers route WITH Layout */}
+      <Route path="/other-users" element={
+        <Layout>
+          <OtherUsers />
         </Layout>
       } />
       

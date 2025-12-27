@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { Search, ShoppingCart, Heart, User, Menu, X } from 'lucide-react'
+import { Search, ShoppingCart, Heart, User, Menu, X, Users } from 'lucide-react'
 import './Header.css'
 
 const Header = () => {
@@ -54,7 +54,9 @@ const Header = () => {
             <Link to="/products" className="nav-link">
               Products
             </Link>
-            
+            <Link to="/other-users" className="nav-link">
+              Other Users
+            </Link>
             
             {/* Icons */}
             <div className="icons-container">
@@ -66,8 +68,6 @@ const Header = () => {
                   </span>
                 )}
               </Link>
-              
-              
               
               <Link to="/profile" className="icon-link">
                 <User size={24} className="icon" />
@@ -115,10 +115,22 @@ const Header = () => {
               </Link>
               
               
+              <Link to="/wishlist" className="mobile-nav-link-with-icon">
+                <Heart size={20} className="mobile-link-icon" />
+                Wishlist
+                {wishlistItems > 0 && (
+                  <span className="mobile-badge">
+                    {wishlistItems}
+                  </span>
+                )}
+              </Link>
               
               <Link to="/profile" className="mobile-nav-link-with-icon">
                 <User size={20} className="mobile-link-icon" />
                 Profile
+              </Link>
+              <Link to="/otherusers" className="mobile-nav-link">
+                Other Users
               </Link>
             </div>
           </div>
